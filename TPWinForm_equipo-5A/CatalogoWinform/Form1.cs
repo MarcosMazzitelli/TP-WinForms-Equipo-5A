@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using negocio;
 
 namespace CatalogoWinform
 {
@@ -15,6 +16,13 @@ namespace CatalogoWinform
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            //El dataSurce,este ve la estructura de la clase y mapea automáticamente las propiedades en columnas
+            dgvArticulos.DataSource = negocio.listar();
         }
     }
 }
