@@ -19,10 +19,10 @@ namespace negocio
 
         }
 
-
+        //Constructor
         public AccesoDatos()
         {                                 //NombreServidor(el punto es genérico) ; NombreBaseDeDatos ; Forma de concetarse(Windows authentication)
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DBM; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
