@@ -18,7 +18,8 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("Select * FROM ARTICULOS");
+                //datos.setearConsulta("Select * FROM ARTICULOS");
+                datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, C.Descripcion Cat, M.Descripcion Mar From ARTICULOS A, CATEGORIAS C, MARCAS M WHERE IdMarca=M.Id and IdCategoria = C.Id;");
                 datos.ejecutarLectura();
                 
                 while (datos.Lector.Read())
@@ -29,6 +30,10 @@ namespace negocio
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Marca = new Marca(); //nueva instancia del objeto Marca dentro de la clase Articulo
+                    aux.Marca.Descripcion = (string)datos.Lector["Mar"]; //Asignamos valor. Mar es el alias de la consulta sql
+                    aux.Categoria = new Categoria(); //nueva instancia del objeto Categoria dentro de la clase Articulo
+                    aux.Categoria.Descripcion= (string)datos.Lector["Cat"]; //Asignamos valor. Cat es el alias de la consulta sql
                     //Marca composicion
                     //Categoria composicion
                     //Se asigna una instancia de aux a la lista por cada vuelta.
