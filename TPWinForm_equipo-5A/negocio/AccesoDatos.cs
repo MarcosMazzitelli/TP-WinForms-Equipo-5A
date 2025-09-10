@@ -35,13 +35,29 @@ namespace negocio
 
         public void ejecutarLectura()
         {
-            //ejecuta el comando (consulta SQL) en la conexion (BD)
+            //ejecuta el comando (consulta SQL (SELECT)) en la conexion (BD)
             comando.Connection = conexion;
             try
             {
                 //se abre la conexion y se realiza la lectura.
                 conexion.Open();
                 lector = comando.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void ejecutarAccion()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                //ejecuta una acción que no sea de lectura (insert, delete, update)
+                comando.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {
