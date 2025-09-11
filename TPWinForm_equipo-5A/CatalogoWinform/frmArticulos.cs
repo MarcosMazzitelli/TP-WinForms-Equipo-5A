@@ -31,5 +31,11 @@ namespace CatalogoWinform
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
         }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategorias ventanaCategorias= new frmCategorias();
+            ventanaCategorias.ShowDialog();
+        }
     }
 }

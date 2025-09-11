@@ -9,6 +9,27 @@ namespace negocio
 {
     public class CategoriaNegocio
     {
+        public static void agregar(Categoria nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into CATEGORIAS (Descripcion) values (@descripcion)");
+                datos.setearParametro("@descripcion", nuevo.Descripcion);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+
         public List<Categoria> listar()
         {
             List<Categoria> lista = new List<Categoria>();
