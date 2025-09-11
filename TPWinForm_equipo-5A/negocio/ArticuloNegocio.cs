@@ -32,7 +32,7 @@ namespace negocio
             try
             {
                 //datos.setearConsulta("Select * FROM ARTICULOS");
-                datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, C.Descripcion Cat, M.Descripcion Mar From ARTICULOS A, CATEGORIAS C, MARCAS M WHERE IdMarca=M.Id and IdCategoria = C.Id;");
+                datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, C.Descripcion Cat, M.Descripcion Mar, A.Precio From ARTICULOS A, CATEGORIAS C, MARCAS M WHERE A.IdMarca=M.Id and A.IdCategoria = C.Id;");
                 datos.ejecutarLectura();
                 
                 while (datos.Lector.Read())
