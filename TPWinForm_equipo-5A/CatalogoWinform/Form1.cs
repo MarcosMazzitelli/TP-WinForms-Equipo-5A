@@ -24,5 +24,12 @@ namespace CatalogoWinform
             //El dataSurce,este ve la estructura de la clase y mapea automáticamente las propiedades en columnas
             dgvArticulos.DataSource = negocio.listar();
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            //abre la ventana de alta articulos y toma el control
+            //frmAltaArticulo modificar = new frmAltaArticulo();
+           // modificar.ShowDialog();
+        }
     }
 }
