@@ -14,10 +14,17 @@ namespace CatalogoWinform
 {
     public partial class frmAltaArticulo : Form
     {
+        private Articulo articulo = null; // click al boton agregar se va a ejecutar el primer constructor con articulo Null, click modificar: se ejecuta el segundo constructor con un articulo
         public frmAltaArticulo()
         {
             InitializeComponent();
         }
+        public frmAltaArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+        }
+
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -49,6 +56,14 @@ namespace CatalogoWinform
             {
                 cboCategoria.DataSource = categoriaNegocio.listar();
                 cboMarca.DataSource = marcaNegocio.listar();
+
+                if(articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo.ToString();
+                    txtNombre.Text = articulo.Nombre;
+                    txtDescripcion.Text = articulo.Descripcion;
+                    txtPrecio.Text = articulo.Precio.ToString();
+                }
             }
             catch (Exception ex)
             {
