@@ -73,5 +73,11 @@ namespace negocio
             conexion.Close();
         }
 
+        public void setearParametro(string nombre, object valor)
+        {
+            //Seteo de parametros recibidos para ejecutar acciones en BD (NombreTabla; Valor a insertar)
+            comando.Parameters.AddWithValue(nombre,valor);
+        }
+
     }
 }

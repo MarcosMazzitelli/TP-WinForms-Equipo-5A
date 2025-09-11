@@ -29,6 +29,10 @@ namespace CatalogoWinform
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
+                //Captura el object de la lista desplegable y lo castea a Categoria (el object tiene ID y Descripcion)
+                articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                //Captura el object de la lista desplegable y lo castea a Marca (el object tiene ID y Descripcion)
+                articulo.Marca = (Marca)cboMarca.SelectedItem;
 
                 ArticuloNegocio.agregar(articulo);
                 MessageBox.Show("Agregado exitosamente");
