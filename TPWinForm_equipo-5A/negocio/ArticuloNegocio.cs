@@ -10,6 +10,19 @@ namespace negocio
 {
     public class ArticuloNegocio
     {
+        public static void agregar(Articulo articulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+              //  datos.setearConsulta();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public List<Articulo> listar()
         {
@@ -29,6 +42,7 @@ namespace negocio
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
                     //Marca composicion
                     //Categoria composicion
                     //Se asigna una instancia de aux a la lista por cada vuelta.
