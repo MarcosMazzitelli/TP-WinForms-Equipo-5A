@@ -11,9 +11,9 @@ using negocio;
 
 namespace CatalogoWinform
 {
-    public partial class Form1 : Form
+    public partial class frmArticulos : Form
     {
-        public Form1()
+        public frmArticulos()
         {
             InitializeComponent();
         }
@@ -25,11 +25,11 @@ namespace CatalogoWinform
             dgvArticulos.DataSource = negocio.listar();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             //abre la ventana de alta articulos y toma el control
-            //frmAltaArticulo modificar = new frmAltaArticulo();
-           // modificar.ShowDialog();
+            frmAltaArticulo alta = new frmAltaArticulo();
+            alta.ShowDialog();
         }
     }
 }
