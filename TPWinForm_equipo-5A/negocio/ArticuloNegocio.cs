@@ -10,6 +10,19 @@ namespace negocio
 {
     public class ArticuloNegocio
     {
+        public static void agregar(Articulo articulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+              //  datos.setearConsulta();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public List<Articulo> listar()
         {
@@ -34,6 +47,7 @@ namespace negocio
                     aux.Marca.Descripcion = (string)datos.Lector["Mar"]; //Asignamos valor. Mar es el alias de la consulta sql
                     aux.Categoria = new Categoria(); //nueva instancia del objeto Categoria dentro de la clase Articulo
                     aux.Categoria.Descripcion= (string)datos.Lector["Cat"]; //Asignamos valor. Cat es el alias de la consulta sql
+                    aux.Precio = (decimal)datos.Lector["Precio"];
                     //Marca composicion
                     //Categoria composicion
                     //Se asigna una instancia de aux a la lista por cada vuelta.
