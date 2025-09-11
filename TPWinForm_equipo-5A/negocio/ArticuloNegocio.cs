@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
@@ -24,6 +25,32 @@ namespace negocio
             }
         }
 
+        public static void modificar (Articulo articulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IDCategoria= @IdCategoria, Precio = @precio where id = @id;");
+                datos.setearParametro("@codigo", articulo.Codigo);
+                datos.setearParametro("@nombre", articulo.Nombre);
+                datos.setearParametro("@Descripcion", articulo.Descripcion);
+                datos.setearParametro("@IdMarca", articulo.Marca.Id);
+                datos.setearParametro("@IdCategoria", articulo.Categoria.Id);
+                datos.setearParametro("@precio", articulo.Precio);
+                datos.setearParametro("@id", articulo.Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
         public List<Articulo> listar()
         {
             List<Articulo> lista = new List<Articulo>();
@@ -32,7 +59,7 @@ namespace negocio
             try
             {
                 //datos.setearConsulta("Select * FROM ARTICULOS");
-                datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, C.Descripcion Cat, M.Descripcion Mar, A.Precio From ARTICULOS A, CATEGORIAS C, MARCAS M WHERE A.IdMarca=M.Id and A.IdCategoria = C.Id;");
+                datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, C.Descripcion Cat, M.Descripcion Mar, C.Id IdCat, M.Id IdMar, A.Precio From ARTICULOS A, CATEGORIAS C, MARCAS M WHERE A.IdMarca=M.Id and A.IdCategoria = C.Id;");
                 datos.ejecutarLectura();
                 
                 while (datos.Lector.Read())
@@ -47,6 +74,8 @@ namespace negocio
                     aux.Marca.Descripcion = (string)datos.Lector["Mar"]; //Asignamos valor. Mar es el alias de la consulta sql
                     aux.Categoria = new Categoria(); //nueva instancia del objeto Categoria dentro de la clase Articulo
                     aux.Categoria.Descripcion= (string)datos.Lector["Cat"]; //Asignamos valor. Cat es el alias de la consulta sql
+                    aux.Categoria.Id = (int)datos.Lector["IdCat"]; //Asignamos valor a Id Categoria para poder utilizarlo en el modificar (cboCategoria.SelectedValue)
+                    aux.Marca.Id = (int)datos.Lector["IdMar"]; // Asignamos valor a Id Marca para poder utilizarlo en el modificar (cboMarca.SelectedValue)
                     aux.Precio = (decimal)datos.Lector["Precio"];
                     //Marca composicion
                     //Categoria composicion
