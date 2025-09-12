@@ -65,6 +65,116 @@ namespace negocio
             }
         }
 
+        public List<Articulo> filtrar(string campo, string criterio, string filtro)
+        {
+
+            List<Articulo> lista = new List<Articulo>();
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                //falta agregar las imagenes a la consulta.
+                string consulta = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, C.Descripcion Cat, M.Descripcion Mar, C.Id IdCat, M.Id IdMar, A.Precio From ARTICULOS A, CATEGORIAS C, MARCAS M WHERE A.IdMarca=M.Id and A.IdCategoria = C.Id And ";
+                switch (campo)
+                {
+                    case "Precio":
+                        switch (criterio)
+                        {
+                            case "Mayor a":
+                                consulta += "A.Precio > " + filtro;
+                                break;
+                            case "Menor a":
+                                consulta += "A.Precio < " + filtro;
+                                break;
+                            default: //Igual a
+                                consulta += "A.Precio = " + filtro;
+                                break;
+                        }
+
+                        break;
+
+                    case "Codigo":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "A.Codigo like '" + filtro + "%' ";
+                                break;
+                            case "Termina con":
+                                consulta += "A.Codigo like '%" + filtro + "'";
+                                break;
+                            default: //contiene
+                                consulta += "A.Codigo like '%" + filtro + "%'"; 
+                                break;
+                        }
+
+                        break;
+                    case "Nombre":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "A.Nombre like '" + filtro + "%' ";
+                                break;
+                            case "Termina con":
+                                consulta += "A.Nombre like '%" + filtro + "'";
+                                break;
+                            default: //contiene
+                                consulta += "A.Nombre like '%" + filtro + "%'";
+                                break;
+                        }
+
+                        break;
+
+                    case "Categoria":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "C.Descripcion like '" + filtro + "%' ";
+                                break;
+                            case "Termina con":
+                                consulta += "C.Descripcion like '%" + filtro + "'";
+                                break;
+                            default: //contiene
+                                consulta += "C.Descripcion like '%" + filtro + "%'";
+                                break;
+                        }
+                        break;
+                }
+                datos.setearConsulta(consulta);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    //se castean los objetos que se leen de la base de datos y se asignan a los atributos de aux.
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Marca = new Marca(); //nueva instancia del objeto Marca dentro de la clase Articulo
+                    aux.Marca.Descripcion = (string)datos.Lector["Mar"]; //Asignamos valor. Mar es el alias de la consulta sql
+                    aux.Categoria = new Categoria(); //nueva instancia del objeto Categoria dentro de la clase Articulo
+                    aux.Categoria.Descripcion = (string)datos.Lector["Cat"]; //Asignamos valor. Cat es el alias de la consulta sql
+                    aux.Categoria.Id = (int)datos.Lector["IdCat"]; //Asignamos valor a Id Categoria para poder utilizarlo en el modificar (cboCategoria.SelectedValue)
+                    aux.Marca.Id = (int)datos.Lector["IdMar"]; // Asignamos valor a Id Marca para poder utilizarlo en el modificar (cboMarca.SelectedValue)
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    //Marca composicion
+                    //Categoria composicion
+                    //Se asigna una instancia de aux a la lista por cada vuelta.
+                    lista.Add(aux);
+                }
+
+
+                return lista;
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public List<Articulo> listar()
         {
             List<Articulo> lista = new List<Articulo>();

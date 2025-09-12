@@ -26,6 +26,13 @@ namespace CatalogoWinform
             ArticuloNegocio negocio = new ArticuloNegocio();
             //El dataSurce,este ve la estructura de la clase y mapea automáticamente las propiedades en columnas
             dgvArticulos.DataSource = negocio.listar();
+            //hacer metodo cargar con lo de arriba
+            cboCampo.Items.Add("Codigo");
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Categoria");
+            cboCampo.Items.Add("Precio");
+
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -82,6 +89,46 @@ namespace CatalogoWinform
                 throw ex;
             }
 
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboCampo.SelectedItem.ToString();
+
+            //Campos numericos
+            if (opcion == "Precio")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Igual a");
+            }
+            //Campos string
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
+                dgvArticulos.DataSource = articuloNegocio.filtrar(campo, criterio, filtro);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
