@@ -69,7 +69,6 @@ namespace CatalogoWinform
         {
             MarcaNegocio marcaNegocio = new MarcaNegocio();
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-
             try
             {
                 cboCategoria.DataSource = categoriaNegocio.listar();
@@ -94,5 +93,6 @@ namespace CatalogoWinform
                 MessageBox.Show(ex.ToString());
             }
         }
+
     }
 }
