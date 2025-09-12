@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using negocio;
+using dominio;
+
 
 namespace CatalogoWinform
 {
@@ -17,7 +19,7 @@ namespace CatalogoWinform
         {
             InitializeComponent();
         }
-
+   
         private void Form1_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
@@ -36,6 +38,13 @@ namespace CatalogoWinform
         {
             frmCategorias ventanaCategorias= new frmCategorias();
             ventanaCategorias.ShowDialog();
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            
+            Articulo seleccionado; // Creamos objeto Articulo donde guardaremos seleccion
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem; // devolvemos un objeto Articulo casteadolo, desde la fila del dataGridView donde nos posicionamos
+            frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
+            modificar.ShowDialog();
         }
     }
 }
