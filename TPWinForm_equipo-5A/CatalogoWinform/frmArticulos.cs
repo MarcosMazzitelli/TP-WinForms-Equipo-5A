@@ -79,9 +79,14 @@ namespace CatalogoWinform
             Articulo seleccionado; //Intsancia objeto articulo
             try
             {
-                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem; // Guardamos el objeto en el que nos posicionamos en la fila de la tabla
-                articuloNegocio.eliminar(seleccionado.Id); // eliminamos enviando el id por parametro 
-                cargar();
+                DialogResult respuesta = MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem; // Guardamos el objeto en el que nos posicionamos en la fila de la tabla
+                    articuloNegocio.eliminar(seleccionado.Id); // eliminamos enviando el id por parametro
+                    MessageBox.Show("Eliminado correctamente", "Aviso");
+                    cargar();
+                }
 
             }
             catch(Exception ex)
@@ -121,6 +126,7 @@ namespace CatalogoWinform
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
+                //filtrar retorna una lista que se asigna al dataGridView.
                 dgvArticulos.DataSource = articuloNegocio.filtrar(campo, criterio, filtro);
 
             }
