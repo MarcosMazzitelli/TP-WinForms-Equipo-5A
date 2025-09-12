@@ -201,8 +201,6 @@ namespace negocio
                     aux.Categoria.Id = (int)datos.Lector["IdCat"]; //Asignamos valor a Id Categoria para poder utilizarlo en el modificar (cboCategoria.SelectedValue)
                     aux.Marca.Id = (int)datos.Lector["IdMar"]; // Asignamos valor a Id Marca para poder utilizarlo en el modificar (cboMarca.SelectedValue)
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    //Marca composicion
-                    //Categoria composicion
                     //Se asigna una instancia de aux a la lista por cada vuelta.
                     lista.Add(aux);
                 }

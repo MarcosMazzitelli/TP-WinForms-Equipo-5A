@@ -2,6 +2,7 @@
 using negocio;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -15,15 +16,21 @@ namespace CatalogoWinform
 {
     public partial class frmAltaArticulo : Form
     {
-        private Articulo articulo = null; 
+        private Articulo articulo = null;
+        public List<String> imagenes;
+        private int indiceImagenActual;
         public frmAltaArticulo() // click al boton agregar se va a ejecutar el primer constructor con articulo Null
         {
             InitializeComponent();
+            imagenes = new List<string>();
+            indiceImagenActual = 0;
         }
         public frmAltaArticulo(Articulo articulo) //click modificar: se ejecuta el segundo constructor con un articulo
         {
             InitializeComponent();
+            imagenes = new List<string>();
             this.articulo = articulo;
+            indiceImagenActual = 0; 
         }
 
 
@@ -77,7 +84,7 @@ namespace CatalogoWinform
                 cboMarca.DataSource = marcaNegocio.listar();
                 cboMarca.ValueMember = "Id"; //Nombre de los atributos de la clase Marca. Asigno valor que va a tomar
                 cboMarca.DisplayMember = "Descripcion"; //Nombre de los atributos de la clase Marca. Asigno valor que va a mostrar
-
+                //cargarImagen();
                 if (articulo != null)
                 {
                     txtCodigo.Text = articulo.Codigo.ToString();
@@ -86,6 +93,7 @@ namespace CatalogoWinform
                     txtPrecio.Text = articulo.Precio.ToString();
                     cboCategoria.SelectedValue = articulo.Categoria.Id;
                     cboMarca.SelectedValue = articulo.Marca.Id;
+                    //cargarImagen()
                 }
             }
             catch (Exception ex)
@@ -94,5 +102,78 @@ namespace CatalogoWinform
             }
         }
 
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            //cargar imagen cuando sale del campo txtbox
+            cargarImagen(txtUrlImagen.Text);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxAgregarImagen.Load(imagen);
+
+            }
+            catch (Exception ex)
+            {
+                pbxAgregarImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
+            }
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            imagenes.Add(txtUrlImagen.Text);
+            txtUrlImagen.Clear();
+            if(imagenes.Count > 0)
+            {
+                
+            }
+
+        }
+
+        private void btnSiguienteImg_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (indiceImagenActual < imagenes.Count -1)
+                {
+                    indiceImagenActual++;
+                    cargarImagen(imagenes[indiceImagenActual]);
+                }
+                else
+                {
+                    MessageBox.Show("Es la última imagen!");
+                    
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btnAnteriorImg_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (indiceImagenActual > 0)
+                {
+                    indiceImagenActual--;
+                    cargarImagen(imagenes[indiceImagenActual]);
+                }
+                else
+                {
+                    MessageBox.Show("Es la primera imagen!");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
