@@ -36,8 +36,9 @@ namespace CatalogoWinform
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCategorias ventanaCategorias= new frmCategorias();
+            frmCategorias ventanaCategorias = new frmCategorias();
             ventanaCategorias.ShowDialog();
+        }
         private void btnModificar_Click(object sender, EventArgs e)
         {
             
