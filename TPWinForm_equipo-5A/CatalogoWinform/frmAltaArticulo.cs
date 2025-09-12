@@ -24,6 +24,7 @@ namespace CatalogoWinform
         {
             InitializeComponent();
             this.articulo = articulo;
+            Text = "Modificar Articulo";
         }
 
 
@@ -78,7 +79,7 @@ namespace CatalogoWinform
                 cboMarca.ValueMember = "Id"; //Nombre de los atributos de la clase Marca. Asigno valor que va a tomar
                 cboMarca.DisplayMember = "Descripcion"; //Nombre de los atributos de la clase Marca. Asigno valor que va a mostrar
 
-                if (articulo != null)
+                if (articulo != null) //Si el articulo ya existe, tremos los valores de los atributos del objeto a los textBox y a los cbo
                 {
                     txtCodigo.Text = articulo.Codigo.ToString();
                     txtNombre.Text = articulo.Nombre;
