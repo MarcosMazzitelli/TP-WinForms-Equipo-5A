@@ -28,6 +28,7 @@ namespace CatalogoWinform
             InitializeComponent();
             imagenes = new List<string>();
             indiceImagenActual = 0;
+            cargarBotones();
             pbxAgregarImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
 
         }
@@ -40,8 +41,6 @@ namespace CatalogoWinform
             Text = "Modificar Articulo";
             txtCabeceraArticulo.Text = "MODIFICAR ARTICULO";
             txtUrlImagen.Enabled = false;
-            btnQuitarImagen.Visible = false;
-            btnAgregarImagen.Visible = false;
             //imagenes
             indiceImagenActual = 0;
             ImagenNegocio imagenNegocio = new ImagenNegocio();
@@ -50,6 +49,7 @@ namespace CatalogoWinform
             listaImagenes = imagenNegocio.listImagenes();
             //expresion lambda para traer solo imagenes asociadas al articulo recibido por parametro
             listaImagenes = listaImagenes.FindAll(img => img.IdArticulo == articulo.Id);
+            cargarBotones();
             foreach (var img in listaImagenes)
             {
                 //en cada vuelta de la lista de imagenes asociadas, se asigna a la lista de urls (atributo del formulario)
@@ -57,30 +57,56 @@ namespace CatalogoWinform
             }
             try
             {
-                btnAnteriorImg.Visible = false;
-                btnSiguienteImg.Visible = false;
                 if (listaImagenes.Count > 0)
                 {
                     pbxAgregarImagen.Load(imagenes.First());
-                    if(imagenes.Count > 1)
-                    {
-                        btnSiguienteImg.Visible = true;
-                    }
                 }
                 else
                 {
-                    pbxAgregarImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
-
+                    MostrarImagenPorDefecto();
                 }
             }
             catch (Exception ex)
             {
-                pbxAgregarImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
-
+                MostrarImagenPorDefecto();
             }
         }
 
         ///METODOS
+        private void MostrarImagenPorDefecto()
+        {
+            pbxAgregarImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
+        }
+
+        private void cargarBotones()
+        {
+
+            // Si no hay imágenes, esconder todos los botones relacionados
+            if (imagenes.Count == 0)
+            {
+                btnAnteriorImg.Visible = false;
+                btnSiguienteImg.Visible = false;
+                btnQuitarImagen.Visible = false;
+                //sino hay imagenes no se ejecuta nada de lo de abajo por el return.
+                return;
+            }
+
+            // Si hay al menos una imagen, habilitamos quitar
+            btnQuitarImagen.Visible = true;
+
+            // Anterior visible solo si hay una imagen antes
+            if(indiceImagenActual > 0)
+                btnAnteriorImg.Visible = true;
+            else
+            btnAnteriorImg.Visible = false;
+
+            // Siguiente visible solo si hay una imagen después
+            if (indiceImagenActual < imagenes.Count - 1)
+                btnSiguienteImg.Visible = true;
+            else
+                btnSiguienteImg.Visible = false;
+
+        }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             //Articulo articulo = new Articulo();
@@ -163,7 +189,7 @@ namespace CatalogoWinform
             }
             catch (Exception ex)
             {
-                pbxAgregarImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
+                MostrarImagenPorDefecto();
             }
         }
 
@@ -171,12 +197,56 @@ namespace CatalogoWinform
         {
             imagenes.Add(txtUrlImagen.Text);
             txtUrlImagen.Clear();
-            if(imagenes.Count > 0)
+            indiceImagenActual = imagenes.Count -1; //se posiciona el indice en el ultimo registro de la lista.
+            cargarImagen(imagenes[indiceImagenActual]);
+            cargarBotones();
+
+        }
+        private void btnQuitarImagen_Click(object sender, EventArgs e)
+        {
+            try
             {
-                
+                imagenes.Remove(imagenes[indiceImagenActual]);
+                // Si ya no hay imágenes luego de eliminar.
+                if (imagenes.Count == 0)
+                {
+                    indiceImagenActual = 0;
+                    MostrarImagenPorDefecto();
+                    txtUrlImagen.Clear();
+                }
+                else
+                {
+                    // Si el índice quedó fuera de rango, ajustar al último
+                    if (indiceImagenActual >= imagenes.Count)
+                        indiceImagenActual = imagenes.Count - 1;
+
+                    // Cargar la imagen en la nueva posición
+                    cargarImagen(imagenes[indiceImagenActual]);
+                    txtUrlImagen.Text = imagenes[indiceImagenActual];
+                }
+                cargarBotones();
+                /*  //Si el indice es mayor a 0 pero tambien es la ultima imagen, hay que restar si o si
+                if(indiceImagenActual > 0 && indiceImagenActual == imagenes.Count)
+                {
+                    indiceImagenActual--;
+                }
+                if (indiceImagenActual == 0 && imagenes.Count != 1)
+                {
+                    indiceImagenActual++;
+                }
+                cargarImagen(imagenes[indiceImagenActual]);
+                cargarBotones();
+                txtUrlImagen.Clear();
+            }*/
+            }
+            catch (Exception)
+            {
+                MostrarImagenPorDefecto();
+
             }
 
         }
+
 
         private void btnSiguienteImg_Click(object sender, EventArgs e)
         {
@@ -187,19 +257,8 @@ namespace CatalogoWinform
                 {
                     indiceImagenActual++;
                     cargarImagen(imagenes[indiceImagenActual]);
-                    //Si es la ultima el boton SIGUIENTE se pone invisible
-                    if(indiceImagenActual == imagenes.Count -1)
-                    {
-                        btnSiguienteImg.Visible = false;
-                    }
+                    cargarBotones();
                 }
-                //Si el indice es mayor a 0 significa que hay una imagen ANTERIOR en un indice menor.
-                if(indiceImagenActual > 0)
-                {
-                    btnAnteriorImg.Visible = true;
-
-                }
-
             }
             catch (Exception ex)
             {
@@ -211,17 +270,11 @@ namespace CatalogoWinform
         {
             try
             {
-                //si el indice es mayor a 0 es porque hay una imagen anterior.
                 if (indiceImagenActual > 0)
                 {
                     indiceImagenActual--;
                     cargarImagen(imagenes[indiceImagenActual]);
-                    //Si se aprieta el boton anterior, la imagen actual pasa a ser la siguiente por lo que se habilita el boton siguiente
-                    btnSiguienteImg.Visible = true;
-                    if (indiceImagenActual == 0)
-                    {
-                        btnAnteriorImg.Visible = false;
-                    }
+                    cargarBotones();
                 }
             }
             catch (Exception ex)
@@ -234,5 +287,6 @@ namespace CatalogoWinform
         {
             Close();
         }
+
     }
 }

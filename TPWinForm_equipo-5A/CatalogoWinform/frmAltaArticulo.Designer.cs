@@ -190,7 +190,7 @@
             // txtUrlImagen
             // 
             this.txtUrlImagen.Location = new System.Drawing.Point(110, 196);
-            this.txtUrlImagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUrlImagen.Margin = new System.Windows.Forms.Padding(2);
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(121, 20);
             this.txtUrlImagen.TabIndex = 4;
@@ -199,7 +199,7 @@
             // pbxAgregarImagen
             // 
             this.pbxAgregarImagen.Location = new System.Drawing.Point(258, 69);
-            this.pbxAgregarImagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxAgregarImagen.Margin = new System.Windows.Forms.Padding(2);
             this.pbxAgregarImagen.Name = "pbxAgregarImagen";
             this.pbxAgregarImagen.Size = new System.Drawing.Size(201, 176);
             this.pbxAgregarImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -209,7 +209,7 @@
             // btnAgregarImagen
             // 
             this.btnAgregarImagen.Location = new System.Drawing.Point(330, 249);
-            this.btnAgregarImagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarImagen.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
             this.btnAgregarImagen.Size = new System.Drawing.Size(16, 19);
             this.btnAgregarImagen.TabIndex = 7;
@@ -221,18 +221,19 @@
             // 
             this.btnQuitarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitarImagen.Location = new System.Drawing.Point(359, 249);
-            this.btnQuitarImagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQuitarImagen.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuitarImagen.Name = "btnQuitarImagen";
             this.btnQuitarImagen.Size = new System.Drawing.Size(16, 19);
             this.btnQuitarImagen.TabIndex = 8;
             this.btnQuitarImagen.Text = "x";
             this.btnQuitarImagen.UseVisualStyleBackColor = true;
+            this.btnQuitarImagen.Click += new System.EventHandler(this.btnQuitarImagen_Click);
             // 
             // btnSiguienteImg
             // 
             this.btnSiguienteImg.BackColor = System.Drawing.SystemColors.Control;
             this.btnSiguienteImg.Location = new System.Drawing.Point(413, 256);
-            this.btnSiguienteImg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSiguienteImg.Margin = new System.Windows.Forms.Padding(2);
             this.btnSiguienteImg.Name = "btnSiguienteImg";
             this.btnSiguienteImg.Size = new System.Drawing.Size(17, 19);
             this.btnSiguienteImg.TabIndex = 18;
@@ -244,7 +245,7 @@
             // 
             this.btnAnteriorImg.BackColor = System.Drawing.SystemColors.Control;
             this.btnAnteriorImg.Location = new System.Drawing.Point(274, 256);
-            this.btnAnteriorImg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnteriorImg.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnteriorImg.Name = "btnAnteriorImg";
             this.btnAnteriorImg.Size = new System.Drawing.Size(17, 19);
             this.btnAnteriorImg.TabIndex = 19;
@@ -259,7 +260,7 @@
             this.panelCabeceraArticulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabeceraArticulo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.panelCabeceraArticulo.Location = new System.Drawing.Point(0, 0);
-            this.panelCabeceraArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelCabeceraArticulo.Margin = new System.Windows.Forms.Padding(2);
             this.panelCabeceraArticulo.Name = "panelCabeceraArticulo";
             this.panelCabeceraArticulo.Size = new System.Drawing.Size(470, 53);
             this.panelCabeceraArticulo.TabIndex = 14;
