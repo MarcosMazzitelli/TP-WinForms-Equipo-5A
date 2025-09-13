@@ -255,5 +255,10 @@ namespace CatalogoWinform
 
         }
 
+        private void btnVerDetalleArticulo_Click(object sender, EventArgs e)
+        {
+            frmDetalleArticulo ventanaDetalleArticulo = new frmDetalleArticulo();
+            ventanaDetalleArticulo.ShowDialog();
+        }
     }
 }

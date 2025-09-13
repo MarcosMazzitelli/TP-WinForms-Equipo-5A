@@ -209,6 +209,7 @@
             this.btnVerDetalleArticulo.TabIndex = 13;
             this.btnVerDetalleArticulo.Text = "Ver artículo";
             this.btnVerDetalleArticulo.UseVisualStyleBackColor = false;
+            this.btnVerDetalleArticulo.Click += new System.EventHandler(this.btnVerDetalleArticulo_Click);
             // 
             // pbxImagenListado
             // 
