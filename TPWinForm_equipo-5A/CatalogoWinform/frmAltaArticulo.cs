@@ -36,6 +36,8 @@ namespace CatalogoWinform
             imagenes = new List<string>();
             this.articulo = articulo;
             indiceImagenActual = 0; 
+            Text = "Modificar Articulo";
+            txtCabeceraArticulo.Text = "MODIFICAR ARTICULO";
         }
 
         ///METODOS
@@ -88,8 +90,8 @@ namespace CatalogoWinform
                 cboMarca.DataSource = marcaNegocio.listar();
                 cboMarca.ValueMember = "Id"; //Nombre de los atributos de la clase Marca. Asigno valor que va a tomar
                 cboMarca.DisplayMember = "Descripcion"; //Nombre de los atributos de la clase Marca. Asigno valor que va a mostrar
-                //cargarImagen();
-                if (articulo != null)
+
+                if (articulo != null) //Si el articulo ya existe, tremos los valores de los atributos del objeto a los textBox y a los cbo
                 {
                     txtCodigo.Text = articulo.Codigo.ToString();
                     txtNombre.Text = articulo.Nombre;
@@ -178,6 +180,9 @@ namespace CatalogoWinform
 
                 throw ex;
             }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

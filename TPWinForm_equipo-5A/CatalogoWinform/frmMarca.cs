@@ -1,4 +1,6 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,41 +9,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using dominio;
-using negocio;
 
 namespace CatalogoWinform
 {
-    public partial class frmCategorias : Form
+    public partial class frmMarca : Form
     {
-        public frmCategorias()
+        public frmMarca()
         {
             InitializeComponent();
         }
 
-        private void frmCategorias_Load(object sender, EventArgs e)
+        private void frmMarca_Load(object sender, EventArgs e)
         {
             cargar();
         }
         private void cargar()
         {
-            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-            dgvCategorias.DataSource = categoriaNegocio.listar();
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            dgvMarca.DataSource = marcaNegocio.listar();
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmAltaCategoria altaCategoria = new frmAltaCategoria();
-            altaCategoria.ShowDialog();
+            frmAltaMarca altaMarca = new frmAltaMarca();
+            altaMarca.ShowDialog();
             cargar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Categoria seleccionado;
-            seleccionado = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
-            frmAltaCategoria modificarCategoria = new frmAltaCategoria(seleccionado);
-            modificarCategoria.ShowDialog();
+            Marca seleccionado;
+            seleccionado = (Marca)dgvMarca.CurrentRow.DataBoundItem;
+            frmAltaMarca modificarMarca = new frmAltaMarca(seleccionado);
+            modificarMarca.ShowDialog();
             cargar();
 
         }
