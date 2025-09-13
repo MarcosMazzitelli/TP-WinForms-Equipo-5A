@@ -195,6 +195,7 @@
             this.pbxAgregarImagen.Location = new System.Drawing.Point(322, 38);
             this.pbxAgregarImagen.Name = "pbxAgregarImagen";
             this.pbxAgregarImagen.Size = new System.Drawing.Size(203, 164);
+            this.pbxAgregarImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxAgregarImagen.TabIndex = 17;
             this.pbxAgregarImagen.TabStop = false;
             // 

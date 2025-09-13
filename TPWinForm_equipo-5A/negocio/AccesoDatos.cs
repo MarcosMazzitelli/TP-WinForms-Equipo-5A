@@ -58,6 +58,20 @@ namespace negocio
                 conexion.Open();
                 //ejecuta una acción que no sea de lectura (insert, delete, update)
                 comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int ejecutarEscalar()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                //ejecuta una acción que no sea de lectura (insert, delete, update)
+                return (int)comando.ExecuteScalar();
 
             }
             catch (Exception ex)

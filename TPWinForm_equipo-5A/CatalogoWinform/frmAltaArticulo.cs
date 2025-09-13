@@ -16,14 +16,19 @@ namespace CatalogoWinform
 {
     public partial class frmAltaArticulo : Form
     {
+        ///ATRIBUTOS
         private Articulo articulo = null;
         public List<String> imagenes;
         private int indiceImagenActual;
+
+        ///CONSTRUCTORES
         public frmAltaArticulo() // click al boton agregar se va a ejecutar el primer constructor con articulo Null
         {
             InitializeComponent();
             imagenes = new List<string>();
             indiceImagenActual = 0;
+            pbxAgregarImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
+
         }
         public frmAltaArticulo(Articulo articulo) //click modificar: se ejecuta el segundo constructor con un articulo
         {
@@ -33,11 +38,10 @@ namespace CatalogoWinform
             indiceImagenActual = 0; 
         }
 
-
+        ///METODOS
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             //Articulo articulo = new Articulo();
-
             try
             {
                 if (articulo == null)
@@ -59,7 +63,7 @@ namespace CatalogoWinform
                 }
                 else
                 {
-                    ArticuloNegocio.agregar(articulo);
+                    ArticuloNegocio.agregar(articulo, imagenes);
                     MessageBox.Show("Agregado exitosamente");
                 }
                 

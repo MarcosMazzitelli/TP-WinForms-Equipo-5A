@@ -5,19 +5,21 @@ using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using dominio;
 
 namespace negocio
 {
     public class ArticuloNegocio
     {
-        public static void agregar(Articulo nuevo)
+        public static void agregar(Articulo nuevo, List<string> imagenes)
         {
             AccesoDatos datos = new AccesoDatos();
+            List<Imagen> listaImagenes = new List<Imagen>();
 
             try
             {
-                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) values (@codigo,@nombre,@descripcion,@idMarca,@idCategoria,@precio)");
+                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) output inserted.Id values (@codigo,@nombre,@descripcion,@idMarca,@idCategoria,@precio)");
  // Parametros (@Clave, valor) clave seria el nombre de la columna y valor el lo que tiene el objeto recibido por parametro en cada atributo
                 datos.setearParametro("@codigo", nuevo.Codigo);
                 datos.setearParametro("@nombre", nuevo.Nombre);
@@ -26,8 +28,18 @@ namespace negocio
                 datos.setearParametro("@idCategoria", nuevo.Categoria.Id);
                 datos.setearParametro("@precio", nuevo.Precio);
                 //falta setear imagenes
-                datos.ejecutarAccion();
+                int idArticulo = datos.ejecutarEscalar();
+                datos.cerrarConexion();
 
+                foreach (string item in imagenes)
+                {
+                    AccesoDatos datosImagen = new AccesoDatos();
+                    datosImagen.setearConsulta("Insert Into IMAGENES (IdArticulo, ImagenUrl) Values (@idArticulo,@imagenUrl)");
+                    datosImagen.setearParametro("@idArticulo", idArticulo);
+                    datosImagen.setearParametro("@imagenUrl", item);
+                    datosImagen.ejecutarAccion(); //s
+                    datosImagen.cerrarConexion();
+                }
             }
             catch (Exception ex)
             {
@@ -42,6 +54,7 @@ namespace negocio
         public static void modificar (Articulo articulo)
         {
             AccesoDatos datos = new AccesoDatos();
+
             try
             {
                 datos.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IDCategoria= @IdCategoria, Precio = @precio where id = @id;");
