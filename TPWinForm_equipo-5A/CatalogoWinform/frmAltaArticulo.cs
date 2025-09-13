@@ -49,12 +49,12 @@ namespace CatalogoWinform
             listaImagenes = imagenNegocio.listImagenes();
             //expresion lambda para traer solo imagenes asociadas al articulo recibido por parametro
             listaImagenes = listaImagenes.FindAll(img => img.IdArticulo == articulo.Id);
-            cargarBotones();
             foreach (var img in listaImagenes)
             {
                 //en cada vuelta de la lista de imagenes asociadas, se asigna a la lista de urls (atributo del formulario)
                 imagenes.Add(img.Url);
             }
+            cargarBotones();
             try
             {
                 if (listaImagenes.Count > 0)
