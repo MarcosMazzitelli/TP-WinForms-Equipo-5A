@@ -53,6 +53,12 @@
     <Compile Include="frmAltaCategoria.Designer.cs">
       <DependentUpon>frmAltaCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAltaMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaMarca.Designer.cs">
+      <DependentUpon>frmAltaMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,10 +77,19 @@
     <Compile Include="frmCategorias.Designer.cs">
       <DependentUpon>frmCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMarca.Designer.cs">
+      <DependentUpon>frmMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAltaCategoria.resx">
       <DependentUpon>frmAltaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaMarca.resx">
+      <DependentUpon>frmAltaMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmArticulos.resx">
       <DependentUpon>frmArticulos.cs</DependentUpon>
@@ -84,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMarca.resx">
+      <DependentUpon>frmMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

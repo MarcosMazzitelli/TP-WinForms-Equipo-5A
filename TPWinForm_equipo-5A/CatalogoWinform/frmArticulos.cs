@@ -136,5 +136,11 @@ namespace CatalogoWinform
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMarca ventanaMarca = new frmMarca();
+            ventanaMarca.ShowDialog();
+        }
     }
 }

@@ -52,7 +52,8 @@
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(16, 53);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -104,6 +105,7 @@
             this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
             this.marcasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.marcasToolStripMenuItem.Text = "Marcas";
+            this.marcasToolStripMenuItem.Click += new System.EventHandler(this.marcasToolStripMenuItem_Click);
             // 
             // btnModificar
             // 
@@ -119,7 +121,7 @@
             // btnEliminarFisicamente
             // 
             this.btnEliminarFisicamente.Location = new System.Drawing.Point(285, 487);
-            this.btnEliminarFisicamente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminarFisicamente.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarFisicamente.Name = "btnEliminarFisicamente";
             this.btnEliminarFisicamente.Size = new System.Drawing.Size(124, 32);
             this.btnEliminarFisicamente.TabIndex = 3;
@@ -152,7 +154,7 @@
             this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCriterio.FormattingEnabled = true;
             this.cboCriterio.Location = new System.Drawing.Point(357, 576);
-            this.cboCriterio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCriterio.Margin = new System.Windows.Forms.Padding(4);
             this.cboCriterio.Name = "cboCriterio";
             this.cboCriterio.Size = new System.Drawing.Size(160, 24);
             this.cboCriterio.TabIndex = 7;
@@ -162,7 +164,7 @@
             this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCampo.FormattingEnabled = true;
             this.cboCampo.Location = new System.Drawing.Point(77, 576);
-            this.cboCampo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCampo.Margin = new System.Windows.Forms.Padding(4);
             this.cboCampo.Name = "cboCampo";
             this.cboCampo.Size = new System.Drawing.Size(160, 24);
             this.cboCampo.TabIndex = 8;
@@ -181,7 +183,7 @@
             // txtFiltroAvanzado
             // 
             this.txtFiltroAvanzado.Location = new System.Drawing.Point(604, 576);
-            this.txtFiltroAvanzado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFiltroAvanzado.Margin = new System.Windows.Forms.Padding(4);
             this.txtFiltroAvanzado.Name = "txtFiltroAvanzado";
             this.txtFiltroAvanzado.Size = new System.Drawing.Size(132, 22);
             this.txtFiltroAvanzado.TabIndex = 10;
@@ -189,7 +191,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(777, 574);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 28);
             this.btnBuscar.TabIndex = 11;

@@ -10,6 +10,26 @@ namespace negocio
 {
     public class MarcaNegocio
     {
+        public void agregar(Marca nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into MARCAS (Descripcion) values (@descripcion)");
+                datos.setearParametro("@descripcion", nuevo.Descripcion);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
         public List<Marca> listar()
         {
             List<Marca> lista = new List<Marca>();
@@ -41,4 +61,6 @@ namespace negocio
             }
         }    
     }
+
+
 }

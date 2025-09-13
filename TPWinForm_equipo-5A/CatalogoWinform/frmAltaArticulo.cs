@@ -25,6 +25,7 @@ namespace CatalogoWinform
             InitializeComponent();
             this.articulo = articulo;
             Text = "Modificar Articulo";
+            txtCabeceraArticulo.Text = "MODIFICAR ARTICULO";
         }
 
 
@@ -95,5 +96,9 @@ namespace CatalogoWinform
             }
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
 using negocio;
 
 namespace CatalogoWinform
@@ -20,6 +21,10 @@ namespace CatalogoWinform
 
         private void frmCategorias_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+        private void cargar()
+        {
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
             dgvCategorias.DataSource = categoriaNegocio.listar();
         }
@@ -28,6 +33,17 @@ namespace CatalogoWinform
         {
             frmAltaCategoria altaCategoria = new frmAltaCategoria();
             altaCategoria.ShowDialog();
+            cargar();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Categoria seleccionado;
+            seleccionado = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+            frmAltaCategoria modificarCategoria = new frmAltaCategoria(seleccionado);
+            modificarCategoria.ShowDialog();
+            cargar();
+
         }
     }
 }
