@@ -201,7 +201,7 @@
             // 
             // btnAgregarImagen
             // 
-            this.btnAgregarImagen.Location = new System.Drawing.Point(392, 215);
+            this.btnAgregarImagen.Location = new System.Drawing.Point(398, 208);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
             this.btnAgregarImagen.Size = new System.Drawing.Size(22, 23);
             this.btnAgregarImagen.TabIndex = 7;
@@ -212,7 +212,7 @@
             // btnQuitarImagen
             // 
             this.btnQuitarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitarImagen.Location = new System.Drawing.Point(444, 215);
+            this.btnQuitarImagen.Location = new System.Drawing.Point(436, 208);
             this.btnQuitarImagen.Name = "btnQuitarImagen";
             this.btnQuitarImagen.Size = new System.Drawing.Size(22, 23);
             this.btnQuitarImagen.TabIndex = 8;
@@ -221,22 +221,24 @@
             // 
             // btnSiguienteImg
             // 
-            this.btnSiguienteImg.Location = new System.Drawing.Point(492, 113);
+            this.btnSiguienteImg.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSiguienteImg.Location = new System.Drawing.Point(513, 220);
             this.btnSiguienteImg.Name = "btnSiguienteImg";
             this.btnSiguienteImg.Size = new System.Drawing.Size(23, 23);
             this.btnSiguienteImg.TabIndex = 18;
             this.btnSiguienteImg.Text = ">";
-            this.btnSiguienteImg.UseVisualStyleBackColor = true;
+            this.btnSiguienteImg.UseVisualStyleBackColor = false;
             this.btnSiguienteImg.Click += new System.EventHandler(this.btnSiguienteImg_Click);
             // 
             // btnAnteriorImg
             // 
-            this.btnAnteriorImg.Location = new System.Drawing.Point(333, 113);
+            this.btnAnteriorImg.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAnteriorImg.Location = new System.Drawing.Point(322, 217);
             this.btnAnteriorImg.Name = "btnAnteriorImg";
             this.btnAnteriorImg.Size = new System.Drawing.Size(23, 23);
             this.btnAnteriorImg.TabIndex = 19;
             this.btnAnteriorImg.Text = "<";
-            this.btnAnteriorImg.UseVisualStyleBackColor = true;
+            this.btnAnteriorImg.UseVisualStyleBackColor = false;
             this.btnAnteriorImg.Click += new System.EventHandler(this.btnAnteriorImg_Click);
             // 
             // frmAltaArticulo

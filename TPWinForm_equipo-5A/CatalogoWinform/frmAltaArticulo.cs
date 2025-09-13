@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,7 +36,45 @@ namespace CatalogoWinform
             InitializeComponent();
             imagenes = new List<string>();
             this.articulo = articulo;
-            indiceImagenActual = 0; 
+            txtUrlImagen.Enabled = false;
+            btnQuitarImagen.Visible = false;
+            btnAgregarImagen.Visible = false;
+            //imagenes
+            indiceImagenActual = 0;
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+            List<Imagen> listaImagenes = new List<Imagen>();
+
+            listaImagenes = imagenNegocio.listImagenes();
+            //expresion lambda para traer solo imagenes asociadas al articulo recibido por parametro
+            listaImagenes = listaImagenes.FindAll(img => img.IdArticulo == articulo.Id);
+            foreach (var img in listaImagenes)
+            {
+                //en cada vuelta de la lista de imagenes asociadas, se asigna a la lista de urls (atributo del formulario)
+                imagenes.Add(img.Url);
+            }
+            try
+            {
+                btnAnteriorImg.Visible = false;
+                btnSiguienteImg.Visible = false;
+                if (listaImagenes.Count > 0)
+                {
+                    pbxAgregarImagen.Load(imagenes.First());
+                    if(imagenes.Count > 1)
+                    {
+                        btnSiguienteImg.Visible = true;
+                    }
+                }
+                else
+                {
+                    pbxAgregarImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                pbxAgregarImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
+
+            }
         }
 
         ///METODOS
@@ -140,15 +179,22 @@ namespace CatalogoWinform
         {
             try
             {
+                //si el indice actual es menor a la cantidad de imagenes en la lista -1 (porque el indice arranca en 0) significa que 
                 if (indiceImagenActual < imagenes.Count -1)
                 {
                     indiceImagenActual++;
                     cargarImagen(imagenes[indiceImagenActual]);
+                    //Si es la ultima el boton SIGUIENTE se pone invisible
+                    if(indiceImagenActual == imagenes.Count -1)
+                    {
+                        btnSiguienteImg.Visible = false;
+                    }
                 }
-                else
+                //Si el indice es mayor a 0 significa que hay una imagen ANTERIOR en un indice menor.
+                if(indiceImagenActual > 0)
                 {
-                    MessageBox.Show("Es la última imagen!");
-                    
+                    btnAnteriorImg.Visible = true;
+
                 }
 
             }
@@ -162,15 +208,17 @@ namespace CatalogoWinform
         {
             try
             {
-
+                //si el indice es mayor a 0 es porque hay una imagen anterior.
                 if (indiceImagenActual > 0)
                 {
                     indiceImagenActual--;
                     cargarImagen(imagenes[indiceImagenActual]);
-                }
-                else
-                {
-                    MessageBox.Show("Es la primera imagen!");
+                    //Si se aprieta el boton anterior, la imagen actual pasa a ser la siguiente por lo que se habilita el boton siguiente
+                    btnSiguienteImg.Visible = true;
+                    if (indiceImagenActual == 0)
+                    {
+                        btnAnteriorImg.Visible = false;
+                    }
                 }
             }
             catch (Exception ex)
