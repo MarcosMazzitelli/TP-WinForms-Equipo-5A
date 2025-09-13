@@ -34,12 +34,22 @@ namespace CatalogoWinform
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             MarcaNegocio marcaNegocio = new MarcaNegocio();
-            Marca marca = new Marca();
             try
             {
+                if (marca == null)
+                    marca = new Marca();
                 marca.Descripcion = txtDescripcionMarca.Text;
-                marcaNegocio.agregar(marca);
-                MessageBox.Show("Agregado exitosamente");
+                if(marca.Id != 0)
+                {
+                    marcaNegocio.modificar(marca);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+                    marcaNegocio.agregar(marca);
+                    MessageBox.Show("Agregado exitosamente");
+                }
+
                 Close();
     
             }catch(Exception ex)

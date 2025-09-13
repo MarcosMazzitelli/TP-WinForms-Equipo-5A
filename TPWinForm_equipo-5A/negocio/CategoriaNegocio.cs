@@ -9,7 +9,7 @@ namespace negocio
 {
     public class CategoriaNegocio
     {
-        public static void agregar(Categoria nuevo)
+        public void agregar(Categoria nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
             try
@@ -60,6 +60,26 @@ namespace negocio
                 datos.cerrarConexion();
             }
 
+        }
+        public void modificar(Categoria categoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update CATEGORIAS set Descripcion = @descripcion where Id = @id");
+                datos.setearParametro("@descripcion", categoria.Descripcion);
+                datos.setearParametro("@id", categoria.Id);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
     }
 }

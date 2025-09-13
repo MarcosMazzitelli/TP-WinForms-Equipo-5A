@@ -10,6 +10,26 @@ namespace negocio
 {
     public class MarcaNegocio
     {
+        public void modificar(Marca marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update MARCAS set Descripcion = @descripcion where Id = @id");
+                datos.setearParametro("@descripcion",marca.Descripcion);
+                datos.setearParametro("@id", marca.Id);
+                datos.ejecutarAccion();
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         public void agregar(Marca nuevo)
         {
             AccesoDatos datos = new AccesoDatos();

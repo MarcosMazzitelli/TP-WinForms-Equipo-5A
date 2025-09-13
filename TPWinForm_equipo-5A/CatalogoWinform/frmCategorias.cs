@@ -45,5 +45,10 @@ namespace CatalogoWinform
             cargar();
 
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

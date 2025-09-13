@@ -30,13 +30,31 @@ namespace CatalogoWinform
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Categoria categoria = new Categoria();
+        
+          CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
 
-            categoria.Descripcion = txtDescripcionCategoria.Text;
+            try
+            {
+                if (categoria == null)
+                    categoria = new Categoria();
+                    categoria.Descripcion = txtDescripcionCategoria.Text;
+                if (categoria.Id != 0)
+                {
+                    categoriaNegocio.modificar(categoria);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+                    categoriaNegocio.agregar(categoria);
+                    MessageBox.Show("Agregado exitosamente");
+                }
+                Close();
 
-            CategoriaNegocio.agregar(categoria);
-            MessageBox.Show("Agregado exitosamente");
-            Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
         }
 
