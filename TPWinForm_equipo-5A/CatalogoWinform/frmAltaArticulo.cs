@@ -20,6 +20,7 @@ namespace CatalogoWinform
         ///ATRIBUTOS
         private Articulo articulo = null;
         public List<String> imagenes;
+        public List<Imagen> listaImagenes;
         private int indiceImagenActual;
 
         ///CONSTRUCTORES
@@ -27,6 +28,7 @@ namespace CatalogoWinform
         {
             InitializeComponent();
             imagenes = new List<string>();
+            listaImagenes = new List<Imagen>(); 
             indiceImagenActual = 0;
             cargarBotones();
             pbxAgregarImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
@@ -44,29 +46,24 @@ namespace CatalogoWinform
             //imagenes
             indiceImagenActual = 0;
             ImagenNegocio imagenNegocio = new ImagenNegocio();
-            List<Imagen> listaImagenes = new List<Imagen>();
+            listaImagenes = new List<Imagen>();
 
             listaImagenes = imagenNegocio.listImagenes();
             //expresion lambda para traer solo imagenes asociadas al articulo recibido por parametro
             listaImagenes = listaImagenes.FindAll(img => img.IdArticulo == articulo.Id);
-            foreach (var img in listaImagenes)
-            {
-                //en cada vuelta de la lista de imagenes asociadas, se asigna a la lista de urls (atributo del formulario)
-                imagenes.Add(img.Url);
-            }
             cargarBotones();
             try
             {
                 if (listaImagenes.Count > 0)
                 {
-                    pbxAgregarImagen.Load(imagenes.First());
+                    pbxAgregarImagen.Load(listaImagenes[0].Url);
                 }
                 else
                 {
                     MostrarImagenPorDefecto();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MostrarImagenPorDefecto();
             }
@@ -75,6 +72,7 @@ namespace CatalogoWinform
         ///METODOS
         private void MostrarImagenPorDefecto()
         {
+            cargarBotones();
             pbxAgregarImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
         }
 
@@ -82,7 +80,7 @@ namespace CatalogoWinform
         {
 
             // Si no hay imágenes, esconder todos los botones relacionados
-            if (imagenes.Count == 0)
+            if (listaImagenes.Count == 0)
             {
                 btnAnteriorImg.Visible = false;
                 btnSiguienteImg.Visible = false;
@@ -101,7 +99,7 @@ namespace CatalogoWinform
             btnAnteriorImg.Visible = false;
 
             // Siguiente visible solo si hay una imagen después
-            if (indiceImagenActual < imagenes.Count - 1)
+            if (indiceImagenActual < listaImagenes.Count - 1)
                 btnSiguienteImg.Visible = true;
             else
                 btnSiguienteImg.Visible = false;
@@ -109,7 +107,6 @@ namespace CatalogoWinform
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //Articulo articulo = new Articulo();
             try
             {
                 if (articulo == null)
@@ -126,12 +123,12 @@ namespace CatalogoWinform
 
                 if (articulo.Id != 0)
                 {
-                    ArticuloNegocio.modificar(articulo);
+                    ArticuloNegocio.modificar(articulo, listaImagenes); //ver dsp
                     MessageBox.Show("Modificdo exitosamente");
                 }
                 else
                 {
-                    ArticuloNegocio.agregar(articulo, imagenes);
+                    ArticuloNegocio.agregar(articulo,listaImagenes);
                     MessageBox.Show("Agregado exitosamente");
                 }
                 
@@ -165,7 +162,6 @@ namespace CatalogoWinform
                     txtPrecio.Text = articulo.Precio.ToString();
                     cboCategoria.SelectedValue = articulo.Categoria.Id;
                     cboMarca.SelectedValue = articulo.Marca.Id;
-                    //cargarImagen()
                 }
             }
             catch (Exception ex)
@@ -182,12 +178,13 @@ namespace CatalogoWinform
 
         private void cargarImagen(string imagen)
         {
+            cargarBotones();
             try
             {
                 pbxAgregarImagen.Load(imagen);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MostrarImagenPorDefecto();
             }
@@ -195,20 +192,21 @@ namespace CatalogoWinform
 
         private void btnAgregarImagen_Click(object sender, EventArgs e)
         {
-            imagenes.Add(txtUrlImagen.Text);
+            Imagen nuevaImagen = new Imagen();
+            nuevaImagen.Url = txtUrlImagen.Text; //solo se carga la URL
+            listaImagenes.Add(nuevaImagen);
             txtUrlImagen.Clear();
-            indiceImagenActual = imagenes.Count -1; //se posiciona el indice en el ultimo registro de la lista.
-            cargarImagen(imagenes[indiceImagenActual]);
-            cargarBotones();
+            indiceImagenActual = listaImagenes.Count -1; //se posiciona el indice en el ultimo registro de la lista.
+            cargarImagen(listaImagenes[indiceImagenActual].Url);
 
         }
         private void btnQuitarImagen_Click(object sender, EventArgs e)
         {
             try
             {
-                imagenes.Remove(imagenes[indiceImagenActual]);
+                listaImagenes.RemoveAt(indiceImagenActual);
                 // Si ya no hay imágenes luego de eliminar.
-                if (imagenes.Count == 0)
+                if (listaImagenes.Count == 0)
                 {
                     indiceImagenActual = 0;
                     MostrarImagenPorDefecto();
@@ -217,27 +215,13 @@ namespace CatalogoWinform
                 else
                 {
                     // Si el índice quedó fuera de rango, ajustar al último
-                    if (indiceImagenActual >= imagenes.Count)
-                        indiceImagenActual = imagenes.Count - 1;
+                    if (indiceImagenActual >= listaImagenes.Count)
+                        indiceImagenActual = listaImagenes.Count - 1;
 
                     // Cargar la imagen en la nueva posición
-                    cargarImagen(imagenes[indiceImagenActual]);
-                    txtUrlImagen.Text = imagenes[indiceImagenActual];
+                    cargarImagen(listaImagenes[indiceImagenActual].Url);
+                    txtUrlImagen.Text = listaImagenes[indiceImagenActual].Url;
                 }
-                cargarBotones();
-                /*  //Si el indice es mayor a 0 pero tambien es la ultima imagen, hay que restar si o si
-                if(indiceImagenActual > 0 && indiceImagenActual == imagenes.Count)
-                {
-                    indiceImagenActual--;
-                }
-                if (indiceImagenActual == 0 && imagenes.Count != 1)
-                {
-                    indiceImagenActual++;
-                }
-                cargarImagen(imagenes[indiceImagenActual]);
-                cargarBotones();
-                txtUrlImagen.Clear();
-            }*/
             }
             catch (Exception)
             {
@@ -253,11 +237,10 @@ namespace CatalogoWinform
             try
             {
                 //si el indice actual es menor a la cantidad de imagenes en la lista -1 (porque el indice arranca en 0) significa que 
-                if (indiceImagenActual < imagenes.Count -1)
+                if (indiceImagenActual < listaImagenes.Count -1)
                 {
                     indiceImagenActual++;
-                    cargarImagen(imagenes[indiceImagenActual]);
-                    cargarBotones();
+                    cargarImagen(listaImagenes[indiceImagenActual].Url);
                 }
             }
             catch (Exception ex)
@@ -273,8 +256,7 @@ namespace CatalogoWinform
                 if (indiceImagenActual > 0)
                 {
                     indiceImagenActual--;
-                    cargarImagen(imagenes[indiceImagenActual]);
-                    cargarBotones();
+                    cargarImagen(listaImagenes[indiceImagenActual].Url);
                 }
             }
             catch (Exception ex)
@@ -287,6 +269,7 @@ namespace CatalogoWinform
         {
             Close();
         }
+
 
     }
 }

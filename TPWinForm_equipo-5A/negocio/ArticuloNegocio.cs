@@ -12,7 +12,7 @@ namespace negocio
 {
     public class ArticuloNegocio
     {
-        public static void agregar(Articulo nuevo, List<string> imagenes)
+        public static void agregar(Articulo nuevo, List<Imagen> imagenes)
         {
             AccesoDatos datos = new AccesoDatos();
             List<Imagen> listaImagenes = new List<Imagen>();
@@ -31,12 +31,12 @@ namespace negocio
                 int idArticulo = datos.ejecutarEscalar();
                 datos.cerrarConexion();
 
-                foreach (string item in imagenes)
+                foreach (Imagen img in imagenes)
                 {
                     AccesoDatos datosImagen = new AccesoDatos();
                     datosImagen.setearConsulta("Insert Into IMAGENES (IdArticulo, ImagenUrl) Values (@idArticulo,@imagenUrl)");
                     datosImagen.setearParametro("@idArticulo", idArticulo);
-                    datosImagen.setearParametro("@imagenUrl", item);
+                    datosImagen.setearParametro("@imagenUrl", img.Url);
                     datosImagen.ejecutarAccion(); //s
                     datosImagen.cerrarConexion();
                 }
@@ -51,7 +51,7 @@ namespace negocio
             }
         }
 
-        public static void modificar (Articulo articulo)
+        public static void modificar (Articulo articulo, List<Imagen> imagenes)
         {
             AccesoDatos datos = new AccesoDatos();
 
@@ -67,6 +67,24 @@ namespace negocio
                 datos.setearParametro("@id", articulo.Id);
 
                 datos.ejecutarAccion();
+                // IMAGENES
+                // Se borran todas las imágenes de ese artículo y se vuelven a insertar las actuales
+                AccesoDatos datosDelete = new AccesoDatos();
+                datosDelete.setearConsulta("DELETE FROM IMAGENES WHERE IdArticulo = @idArticulo");
+                datosDelete.setearParametro("@idArticulo", articulo.Id);
+                datosDelete.ejecutarAccion();
+                datosDelete.cerrarConexion();
+
+                foreach (Imagen img in imagenes)
+                {
+                    AccesoDatos datosImg = new AccesoDatos();
+                    datosImg.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@idArticulo, @imagenUrl)");
+                    datosImg.setearParametro("@idArticulo", articulo.Id);
+                    datosImg.setearParametro("@imagenUrl", img.Url);
+                    datosImg.ejecutarAccion();
+                    datosImg.cerrarConexion();
+                }
+
             }
             catch (Exception ex)
             {
@@ -237,9 +255,16 @@ namespace negocio
                 datos.setearConsulta("delete from articulos where id = @id;");
                 datos.setearParametro("@id", id);
                 datos.ejecutarAccion();
-    
+
+                // IMAGENES
+                // Se borran todas las imágenes de ese artículo
+                AccesoDatos datosDelete = new AccesoDatos();
+                datosDelete.setearConsulta("DELETE FROM IMAGENES WHERE IdArticulo = @idArticulo");
+                datosDelete.setearParametro("@idArticulo", id);
+                datosDelete.ejecutarAccion();
+                datosDelete.cerrarConexion();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }

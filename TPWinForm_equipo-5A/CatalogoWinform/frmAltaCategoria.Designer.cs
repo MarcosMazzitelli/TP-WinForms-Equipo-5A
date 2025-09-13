@@ -40,19 +40,17 @@
             // lblDescripcionCategoria
             // 
             this.lblDescripcionCategoria.AutoSize = true;
-            this.lblDescripcionCategoria.Location = new System.Drawing.Point(120, 90);
-            this.lblDescripcionCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescripcionCategoria.Location = new System.Drawing.Point(90, 73);
             this.lblDescripcionCategoria.Name = "lblDescripcionCategoria";
-            this.lblDescripcionCategoria.Size = new System.Drawing.Size(79, 16);
+            this.lblDescripcionCategoria.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcionCategoria.TabIndex = 0;
             this.lblDescripcionCategoria.Text = "Descripcion";
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(124, 209);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Location = new System.Drawing.Point(93, 170);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -60,10 +58,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(296, 209);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(222, 170);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -71,10 +68,9 @@
             // 
             // txtDescripcionCategoria
             // 
-            this.txtDescripcionCategoria.Location = new System.Drawing.Point(249, 86);
-            this.txtDescripcionCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcionCategoria.Location = new System.Drawing.Point(187, 70);
             this.txtDescripcionCategoria.Name = "txtDescripcionCategoria";
-            this.txtDescripcionCategoria.Size = new System.Drawing.Size(132, 22);
+            this.txtDescripcionCategoria.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcionCategoria.TabIndex = 6;
             // 
             // txtCabeceraCategoria
@@ -83,9 +79,10 @@
             this.txtCabeceraCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtCabeceraCategoria.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCabeceraCategoria.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtCabeceraCategoria.Location = new System.Drawing.Point(34, 26);
+            this.txtCabeceraCategoria.Location = new System.Drawing.Point(26, 21);
+            this.txtCabeceraCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtCabeceraCategoria.Name = "txtCabeceraCategoria";
-            this.txtCabeceraCategoria.Size = new System.Drawing.Size(203, 23);
+            this.txtCabeceraCategoria.Size = new System.Drawing.Size(168, 19);
             this.txtCabeceraCategoria.TabIndex = 7;
             this.txtCabeceraCategoria.Text = "ALTA NUEVA CATEGORIA";
             this.txtCabeceraCategoria.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -97,21 +94,21 @@
             this.panelCabeceraCategoria.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabeceraCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.panelCabeceraCategoria.Location = new System.Drawing.Point(0, 0);
+            this.panelCabeceraCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelCabeceraCategoria.Name = "panelCabeceraCategoria";
-            this.panelCabeceraCategoria.Size = new System.Drawing.Size(681, 65);
+            this.panelCabeceraCategoria.Size = new System.Drawing.Size(511, 53);
             this.panelCabeceraCategoria.TabIndex = 12;
             // 
             // frmAltaCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 336);
+            this.ClientSize = new System.Drawing.Size(511, 273);
             this.Controls.Add(this.panelCabeceraCategoria);
             this.Controls.Add(this.txtDescripcionCategoria);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblDescripcionCategoria);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAltaCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta Categoria";
