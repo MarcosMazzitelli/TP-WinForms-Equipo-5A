@@ -103,7 +103,7 @@ namespace negocio
                 }
                 if (existente == true)
                 {
-                    MessageBox.Show("Operación denegada. Articulos en existencia pertenecnientes a la categoria.");
+                    MessageBox.Show("Operación denegada. Articulos en existencia pertenecientes a la categoria.");
                 }
                 else
                 {

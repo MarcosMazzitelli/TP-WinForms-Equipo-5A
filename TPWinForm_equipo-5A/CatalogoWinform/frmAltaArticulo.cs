@@ -41,7 +41,6 @@ namespace CatalogoWinform
             indiceImagenActual = 0; 
             Text = "Modificar Articulo";
             txtCabeceraArticulo.Text = "MODIFICAR ARTICULO";
-            txtUrlImagen.Enabled = false;
             //imagenes
             indiceImagenActual = 0;
             ImagenNegocio imagenNegocio = new ImagenNegocio();
@@ -69,6 +68,29 @@ namespace CatalogoWinform
         }
 
         ///METODOS
+
+        private void cargarImagen(string imagen)
+        {
+            cargarBotones();
+            try
+            {
+                pbxAgregarImagen.Load(imagen);
+                if (string.IsNullOrWhiteSpace(txtUrlImagen.Text))
+                {
+                    btnAgregarImagen.Visible = false;
+                }
+                else
+                {
+                    btnAgregarImagen.Visible = true;
+                }
+
+            }
+            catch (Exception)
+            {
+                MostrarImagenPorDefecto();
+            }
+        }
+
         private void MostrarImagenPorDefecto()
         {
             cargarBotones();
@@ -108,6 +130,18 @@ namespace CatalogoWinform
         {
             try
             {
+                if (!(soloNumeros(txtPrecio.Text)))
+                {
+                    MessageBox.Show("Solo se permiten valores numéricos para ese tipo de filtro.");
+                    return;
+                }
+                if (validarFormulario())
+                {
+                    MessageBox.Show("Debe completar todos los cambos requeridos.");
+                    return;
+                }
+
+
                 if (articulo == null)
                     articulo = new Articulo();
                 articulo.Codigo = txtCodigo.Text;
@@ -175,27 +209,6 @@ namespace CatalogoWinform
             cargarImagen(txtUrlImagen.Text);
         }
 
-        private void cargarImagen(string imagen)
-        {
-            cargarBotones();
-            try
-            {
-                pbxAgregarImagen.Load(imagen);
-                if (string.IsNullOrWhiteSpace(txtUrlImagen.Text))
-                {
-                    btnAgregarImagen.Visible = false;
-                }
-                else
-                {
-                    btnAgregarImagen.Visible = true;
-                }
-
-            }
-            catch (Exception)
-            {
-                MostrarImagenPorDefecto();
-            }
-        }
 
         private void btnAgregarImagen_Click(object sender, EventArgs e)
         {
@@ -274,6 +287,25 @@ namespace CatalogoWinform
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
+        }
+        private bool validarFormulario()
+        {
+            if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtDescripcion.Text) || 
+                string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtPrecio.Text))
+            {
+                return true;
+            }
+            return false;
         }
 
 

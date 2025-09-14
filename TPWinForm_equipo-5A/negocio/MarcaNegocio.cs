@@ -102,7 +102,7 @@ namespace negocio
                 }
                 if (existente == true)
                 {
-                    MessageBox.Show("Operación denegada. Articulos en existencia pertenecnientes a la marca.");
+                    MessageBox.Show("Operación denegada. Articulos en existencia pertenecientes a la marca.");
                 }
                 else
                 {

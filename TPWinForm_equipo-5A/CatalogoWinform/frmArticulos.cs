@@ -132,6 +132,8 @@ namespace CatalogoWinform
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             try
             {
+                if (validarFiltro())
+                    return;
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
@@ -164,36 +166,6 @@ namespace CatalogoWinform
 
         }
 
-        private void mostrarImagenActual()
-        {
-            cargarBotones();
-            if (listaImagenes != null && listaImagenes.Count > 0)
-            {
-                // Si no hay imágenes, mostramos imagen por defecto y deshabilitamos botones
-                if (listaImagenes == null || listaImagenes.Count == 0)
-                {
-                    MostrarImagenPorDefecto();
-                    btnAnteriorImg.Visible = false;
-                    btnSiguienteImg.Visible = false;
-                    return;
-                }
-
-                try
-                {
-
-                    pbxImagenListado.Load(listaImagenes[indiceImagenActual].Url);
-                }
-                catch
-                {
-                    MostrarImagenPorDefecto();
-                }
-            }
-            else
-            {
-                MostrarImagenPorDefecto();
-            }
-
-        }
 
         private void cargarBotones()
         {
@@ -244,7 +216,6 @@ namespace CatalogoWinform
                 indiceImagenActual = 0; // vuelve al principio
 
             mostrarImagenActual();
-
         }
 
         private void btnMenuCategorias_Click(object sender, EventArgs e)
@@ -281,12 +252,79 @@ namespace CatalogoWinform
             ventanaDetalleArticulo.ShowDialog();
             this.Show();
         }
+        private void mostrarImagenActual()
+        {
+            cargarBotones();
+            if (listaImagenes != null && listaImagenes.Count > 0)
+            {
+                // Si no hay imágenes, mostramos imagen por defecto y deshabilitamos botones
+                if (listaImagenes == null || listaImagenes.Count == 0)
+                {
+                    MostrarImagenPorDefecto();
+                    btnAnteriorImg.Visible = false;
+                    btnSiguienteImg.Visible = false;
+                    return;
+                }
 
+                try
+                {
+
+                    pbxImagenListado.Load(listaImagenes[indiceImagenActual].Url);
+                }
+                catch
+                {
+                    MostrarImagenPorDefecto();
+                }
+            }
+            else
+            {
+                MostrarImagenPorDefecto();
+            }
+        }
+
+        //HELPERS
         private void ocultarColumnas()
         {
             dgvArticulos.Columns["Id"].Visible = false;
             dgvArticulos.Columns["Descripcion"].Visible = false;
 
         }
+        private bool validarFiltro()
+        {
+            if (cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el campo para filtrar.");
+                return true;
+            }
+            if(cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el criterio para filtrar.");
+                return true;
+            }
+            if(cboCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrEmpty(txtFiltroAvanzado.Text))
+                {
+                    MessageBox.Show("Primero debes ingresar un valor en el filtro.");
+                    return true;
+                }
+                if (!(soloNumeros(txtFiltroAvanzado.Text)))
+                {
+                    MessageBox.Show("Solo se permiten valores numéricos para ese tipo de filtro.");
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                        return false;
+            }
+            return true;
+        }
+        
     }
 }

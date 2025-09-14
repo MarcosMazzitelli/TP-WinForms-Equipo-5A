@@ -42,13 +42,12 @@
             this.dgvMarca.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMarca.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMarca.Location = new System.Drawing.Point(149, 110);
-            this.dgvMarca.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMarca.Location = new System.Drawing.Point(112, 89);
             this.dgvMarca.MultiSelect = false;
             this.dgvMarca.Name = "dgvMarca";
             this.dgvMarca.RowHeadersWidth = 51;
             this.dgvMarca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMarca.Size = new System.Drawing.Size(501, 233);
+            this.dgvMarca.Size = new System.Drawing.Size(376, 189);
             this.dgvMarca.TabIndex = 1;
             // 
             // btnEliminar
@@ -56,10 +55,9 @@
             this.btnEliminar.BackColor = System.Drawing.SystemColors.Control;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.Location = new System.Drawing.Point(551, 378);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(413, 307);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(118, 35);
+            this.btnEliminar.Size = new System.Drawing.Size(88, 28);
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -70,10 +68,9 @@
             this.btnModificar.BackColor = System.Drawing.SystemColors.Control;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnModificar.Location = new System.Drawing.Point(352, 378);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.Location = new System.Drawing.Point(264, 307);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(118, 35);
+            this.btnModificar.Size = new System.Drawing.Size(88, 28);
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -84,10 +81,9 @@
             this.btnAgregar.BackColor = System.Drawing.SystemColors.Control;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnAgregar.Location = new System.Drawing.Point(149, 378);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Location = new System.Drawing.Point(112, 307);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(118, 35);
+            this.btnAgregar.Size = new System.Drawing.Size(88, 28);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -99,27 +95,28 @@
             this.txtCabeceraMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtCabeceraMarca.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCabeceraMarca.ForeColor = System.Drawing.Color.Black;
-            this.txtCabeceraMarca.Location = new System.Drawing.Point(36, 32);
+            this.txtCabeceraMarca.Location = new System.Drawing.Point(205, 33);
+            this.txtCabeceraMarca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtCabeceraMarca.Name = "txtCabeceraMarca";
-            this.txtCabeceraMarca.Size = new System.Drawing.Size(217, 30);
+            this.txtCabeceraMarca.Size = new System.Drawing.Size(181, 24);
             this.txtCabeceraMarca.TabIndex = 7;
             this.txtCabeceraMarca.Text = "Gestión de marcas";
             this.txtCabeceraMarca.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmMarca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(797, 441);
+            this.ClientSize = new System.Drawing.Size(599, 365);
             this.Controls.Add(this.txtCabeceraMarca);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvMarca);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(815, 488);
-            this.MinimumSize = new System.Drawing.Size(815, 488);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(615, 404);
+            this.MinimumSize = new System.Drawing.Size(615, 404);
             this.Name = "frmMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Marcas";
