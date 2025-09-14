@@ -49,6 +49,11 @@ namespace CatalogoWinform
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
+            Categoria seleccion;
+            seleccion = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+            CategoriaNegocio categoriaNegocio= new CategoriaNegocio();
+            categoriaNegocio.eliminar(seleccion.Id);
+            cargar();
         }
     }
 }

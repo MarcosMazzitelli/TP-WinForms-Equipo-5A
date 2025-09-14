@@ -32,92 +32,87 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblDescripcionCategoria = new System.Windows.Forms.Label();
-            this.panelCabeceraCategoria = new System.Windows.Forms.Panel();
             this.txtCabeceraMarca = new System.Windows.Forms.Label();
-            this.panelCabeceraCategoria.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtDescripcionMarca
             // 
-            this.txtDescripcionMarca.Location = new System.Drawing.Point(293, 122);
+            this.txtDescripcionMarca.Location = new System.Drawing.Point(328, 168);
+            this.txtDescripcionMarca.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcionMarca.Name = "txtDescripcionMarca";
-            this.txtDescripcionMarca.Size = new System.Drawing.Size(100, 20);
+            this.txtDescripcionMarca.Size = new System.Drawing.Size(264, 22);
             this.txtDescripcionMarca.TabIndex = 10;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(326, 222);
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.Location = new System.Drawing.Point(435, 273);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(118, 35);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(200, 222);
+            this.btnAceptar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAceptar.Location = new System.Drawing.Point(267, 273);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(118, 35);
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // lblDescripcionCategoria
             // 
             this.lblDescripcionCategoria.AutoSize = true;
-            this.lblDescripcionCategoria.Location = new System.Drawing.Point(196, 125);
+            this.lblDescripcionCategoria.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDescripcionCategoria.Location = new System.Drawing.Point(213, 166);
+            this.lblDescripcionCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcionCategoria.Name = "lblDescripcionCategoria";
-            this.lblDescripcionCategoria.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcionCategoria.Size = new System.Drawing.Size(107, 24);
             this.lblDescripcionCategoria.TabIndex = 7;
             this.lblDescripcionCategoria.Text = "Descripcion";
-            // 
-            // panelCabeceraCategoria
-            // 
-            this.panelCabeceraCategoria.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panelCabeceraCategoria.Controls.Add(this.txtCabeceraMarca);
-            this.panelCabeceraCategoria.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCabeceraCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelCabeceraCategoria.Location = new System.Drawing.Point(0, 0);
-            this.panelCabeceraCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelCabeceraCategoria.Name = "panelCabeceraCategoria";
-            this.panelCabeceraCategoria.Size = new System.Drawing.Size(600, 53);
-            this.panelCabeceraCategoria.TabIndex = 11;
             // 
             // txtCabeceraMarca
             // 
             this.txtCabeceraMarca.AutoSize = true;
             this.txtCabeceraMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtCabeceraMarca.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCabeceraMarca.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtCabeceraMarca.Location = new System.Drawing.Point(26, 21);
-            this.txtCabeceraMarca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtCabeceraMarca.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Bold);
+            this.txtCabeceraMarca.ForeColor = System.Drawing.Color.Black;
+            this.txtCabeceraMarca.Location = new System.Drawing.Point(12, 20);
             this.txtCabeceraMarca.Name = "txtCabeceraMarca";
-            this.txtCabeceraMarca.Size = new System.Drawing.Size(142, 19);
+            this.txtCabeceraMarca.Size = new System.Drawing.Size(203, 30);
             this.txtCabeceraMarca.TabIndex = 7;
-            this.txtCabeceraMarca.Text = "ALTA NUEVA MARCA";
+            this.txtCabeceraMarca.Text = "Alta nueva marca";
             this.txtCabeceraMarca.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmAltaMarca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.panelCabeceraCategoria);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(797, 441);
+            this.Controls.Add(this.txtCabeceraMarca);
             this.Controls.Add(this.txtDescripcionMarca);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblDescripcionCategoria);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MaximumSize = new System.Drawing.Size(616, 405);
-            this.MinimumSize = new System.Drawing.Size(616, 405);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(815, 488);
+            this.MinimumSize = new System.Drawing.Size(815, 488);
             this.Name = "frmAltaMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAltaMarca";
             this.Load += new System.EventHandler(this.frmAltaMarca_Load);
-            this.panelCabeceraCategoria.ResumeLayout(false);
-            this.panelCabeceraCategoria.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,7 +124,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblDescripcionCategoria;
-        private System.Windows.Forms.Panel panelCabeceraCategoria;
         private System.Windows.Forms.Label txtCabeceraMarca;
     }
 }

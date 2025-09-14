@@ -52,9 +52,10 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(7, 67);
+            this.lblCodigo.Location = new System.Drawing.Point(9, 82);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(139, 19);
+            this.lblCodigo.Size = new System.Drawing.Size(171, 24);
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Codigo de Artículo:";
             // 
@@ -66,11 +67,12 @@
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtCodigo.ForeColor = System.Drawing.Color.Black;
             this.txtCodigo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtCodigo.Location = new System.Drawing.Point(159, 69);
+            this.txtCodigo.Location = new System.Drawing.Point(212, 85);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtCodigo.Size = new System.Drawing.Size(291, 22);
+            this.txtCodigo.Size = new System.Drawing.Size(388, 27);
             this.txtCodigo.TabIndex = 1;
             this.txtCodigo.TabStop = false;
             // 
@@ -80,9 +82,11 @@
             this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Location = new System.Drawing.Point(359, 336);
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnVolver.Location = new System.Drawing.Point(479, 398);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(91, 33);
+            this.btnVolver.Size = new System.Drawing.Size(121, 41);
             this.btnVolver.TabIndex = 2;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -95,11 +99,12 @@
             this.txtMarca.Enabled = false;
             this.txtMarca.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtMarca.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtMarca.Location = new System.Drawing.Point(159, 175);
+            this.txtMarca.Location = new System.Drawing.Point(212, 215);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.ReadOnly = true;
             this.txtMarca.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtMarca.Size = new System.Drawing.Size(291, 22);
+            this.txtMarca.Size = new System.Drawing.Size(388, 27);
             this.txtMarca.TabIndex = 4;
             this.txtMarca.TabStop = false;
             // 
@@ -110,11 +115,12 @@
             this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtDescripcion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtDescripcion.Location = new System.Drawing.Point(159, 140);
+            this.txtDescripcion.Location = new System.Drawing.Point(212, 172);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtDescripcion.Size = new System.Drawing.Size(291, 22);
+            this.txtDescripcion.Size = new System.Drawing.Size(388, 27);
             this.txtDescripcion.TabIndex = 6;
             this.txtDescripcion.TabStop = false;
             // 
@@ -125,11 +131,12 @@
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtNombre.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtNombre.Location = new System.Drawing.Point(159, 104);
+            this.txtNombre.Location = new System.Drawing.Point(212, 128);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
             this.txtNombre.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtNombre.Size = new System.Drawing.Size(291, 22);
+            this.txtNombre.Size = new System.Drawing.Size(388, 27);
             this.txtNombre.TabIndex = 8;
             this.txtNombre.TabStop = false;
             // 
@@ -137,9 +144,10 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(77, 104);
+            this.lblNombre.Location = new System.Drawing.Point(103, 128);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(69, 19);
+            this.lblNombre.Size = new System.Drawing.Size(84, 24);
             this.lblNombre.TabIndex = 9;
             this.lblNombre.Text = "Nombre:";
             // 
@@ -147,9 +155,10 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(54, 138);
+            this.lblDescripcion.Location = new System.Drawing.Point(72, 170);
+            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(92, 19);
+            this.lblDescripcion.Size = new System.Drawing.Size(113, 24);
             this.lblDescripcion.TabIndex = 10;
             this.lblDescripcion.Text = "Descripción:";
             // 
@@ -157,9 +166,10 @@
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(90, 176);
+            this.lblMarca.Location = new System.Drawing.Point(120, 217);
+            this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(56, 19);
+            this.lblMarca.Size = new System.Drawing.Size(68, 24);
             this.lblMarca.TabIndex = 11;
             this.lblMarca.Text = "Marca:";
             // 
@@ -167,9 +177,10 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(68, 210);
+            this.lblCategoria.Location = new System.Drawing.Point(91, 258);
+            this.lblCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(78, 19);
+            this.lblCategoria.Size = new System.Drawing.Size(96, 24);
             this.lblCategoria.TabIndex = 12;
             this.lblCategoria.Text = "Categoría:";
             // 
@@ -177,17 +188,19 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(90, 248);
+            this.lblPrecio.Location = new System.Drawing.Point(120, 305);
+            this.lblPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(56, 19);
+            this.lblPrecio.Size = new System.Drawing.Size(68, 24);
             this.lblPrecio.TabIndex = 13;
             this.lblPrecio.Text = "Precio:";
             // 
             // pbxImagen
             // 
-            this.pbxImagen.Location = new System.Drawing.Point(491, 76);
+            this.pbxImagen.Location = new System.Drawing.Point(655, 94);
+            this.pbxImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(245, 254);
+            this.pbxImagen.Size = new System.Drawing.Size(327, 313);
             this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxImagen.TabIndex = 14;
             this.pbxImagen.TabStop = false;
@@ -199,11 +212,12 @@
             this.txtCategoria.Enabled = false;
             this.txtCategoria.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtCategoria.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtCategoria.Location = new System.Drawing.Point(159, 212);
+            this.txtCategoria.Location = new System.Drawing.Point(212, 261);
+            this.txtCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.ReadOnly = true;
             this.txtCategoria.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtCategoria.Size = new System.Drawing.Size(291, 22);
+            this.txtCategoria.Size = new System.Drawing.Size(388, 27);
             this.txtCategoria.TabIndex = 15;
             this.txtCategoria.TabStop = false;
             // 
@@ -214,11 +228,12 @@
             this.txtPrecio.Enabled = false;
             this.txtPrecio.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtPrecio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtPrecio.Location = new System.Drawing.Point(159, 250);
+            this.txtPrecio.Location = new System.Drawing.Point(212, 308);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ReadOnly = true;
             this.txtPrecio.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtPrecio.Size = new System.Drawing.Size(291, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(388, 27);
             this.txtPrecio.TabIndex = 16;
             this.txtPrecio.TabStop = false;
             // 
@@ -229,9 +244,10 @@
             this.btnSiguienteImg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnSiguienteImg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnSiguienteImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiguienteImg.Location = new System.Drawing.Point(631, 336);
+            this.btnSiguienteImg.Location = new System.Drawing.Point(841, 414);
+            this.btnSiguienteImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSiguienteImg.Name = "btnSiguienteImg";
-            this.btnSiguienteImg.Size = new System.Drawing.Size(27, 24);
+            this.btnSiguienteImg.Size = new System.Drawing.Size(36, 30);
             this.btnSiguienteImg.TabIndex = 17;
             this.btnSiguienteImg.Text = ">";
             this.btnSiguienteImg.UseVisualStyleBackColor = false;
@@ -244,9 +260,10 @@
             this.btnAnteriorImg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnAnteriorImg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnAnteriorImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnteriorImg.Location = new System.Drawing.Point(553, 336);
+            this.btnAnteriorImg.Location = new System.Drawing.Point(737, 414);
+            this.btnAnteriorImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAnteriorImg.Name = "btnAnteriorImg";
-            this.btnAnteriorImg.Size = new System.Drawing.Size(27, 24);
+            this.btnAnteriorImg.Size = new System.Drawing.Size(36, 30);
             this.btnAnteriorImg.TabIndex = 18;
             this.btnAnteriorImg.Text = "<";
             this.btnAnteriorImg.UseVisualStyleBackColor = false;
@@ -258,18 +275,19 @@
             this.lblTitulo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTitulo.Location = new System.Drawing.Point(284, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(379, 11);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(177, 24);
+            this.lblTitulo.Size = new System.Drawing.Size(210, 30);
             this.lblTitulo.TabIndex = 19;
             this.lblTitulo.Text = "Detalle de artículo";
             // 
             // frmDetalleArticulo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 372);
+            this.ClientSize = new System.Drawing.Size(1064, 448);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnAnteriorImg);
             this.Controls.Add(this.btnSiguienteImg);
@@ -287,8 +305,9 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
-            this.MaximumSize = new System.Drawing.Size(816, 411);
-            this.MinimumSize = new System.Drawing.Size(816, 411);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(1082, 495);
+            this.MinimumSize = new System.Drawing.Size(1082, 495);
             this.Name = "frmDetalleArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDetalleArticulo";
