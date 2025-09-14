@@ -43,6 +43,7 @@ namespace negocio
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error al agregar un articulo");
                 throw ex;
             }
             finally
@@ -88,6 +89,7 @@ namespace negocio
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error al modificar un articulo");
                 throw ex;
             }
             finally
@@ -201,7 +203,7 @@ namespace negocio
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Error al filtrar un articulo");
                 throw ex;
             }
         }
@@ -240,8 +242,8 @@ namespace negocio
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error al listar un articulo");
                 throw ex;
-                //cartel de validacion?
             }
 
         }
@@ -266,6 +268,7 @@ namespace negocio
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error al eliminar un articulo");
                 throw ex;
             }
         }

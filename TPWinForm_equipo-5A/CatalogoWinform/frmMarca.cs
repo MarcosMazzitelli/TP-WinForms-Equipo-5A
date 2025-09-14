@@ -49,6 +49,11 @@ namespace CatalogoWinform
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            Marca seleccionado;
+            seleccionado = (Marca)dgvMarca.CurrentRow.DataBoundItem;
+            marcaNegocio.eliminar(seleccionado.Id);
+            cargar();
 
         }
     }

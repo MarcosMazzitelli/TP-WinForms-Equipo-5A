@@ -52,16 +52,18 @@
             // 
             // dgvArticulos
             // 
+            this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvArticulos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvArticulos.Location = new System.Drawing.Point(12, 50);
+            this.dgvArticulos.Location = new System.Drawing.Point(16, 62);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(558, 341);
+            this.dgvArticulos.Size = new System.Drawing.Size(744, 420);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
@@ -72,10 +74,10 @@
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(11, 397);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregar.Location = new System.Drawing.Point(15, 489);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(93, 26);
+            this.btnAgregar.Size = new System.Drawing.Size(124, 32);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -88,10 +90,10 @@
             this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(112, 397);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificar.Location = new System.Drawing.Point(149, 489);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(93, 26);
+            this.btnModificar.Size = new System.Drawing.Size(124, 32);
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -105,9 +107,10 @@
             this.btnEliminarFisicamente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnEliminarFisicamente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarFisicamente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarFisicamente.Location = new System.Drawing.Point(213, 397);
+            this.btnEliminarFisicamente.Location = new System.Drawing.Point(284, 489);
+            this.btnEliminarFisicamente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminarFisicamente.Name = "btnEliminarFisicamente";
-            this.btnEliminarFisicamente.Size = new System.Drawing.Size(93, 26);
+            this.btnEliminarFisicamente.Size = new System.Drawing.Size(124, 32);
             this.btnEliminarFisicamente.TabIndex = 3;
             this.btnEliminarFisicamente.Text = "Eliminar";
             this.btnEliminarFisicamente.UseVisualStyleBackColor = false;
@@ -117,9 +120,10 @@
             // 
             this.lblCampo.AutoSize = true;
             this.lblCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCampo.Location = new System.Drawing.Point(12, 471);
+            this.lblCampo.Location = new System.Drawing.Point(16, 580);
+            this.lblCampo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCampo.Name = "lblCampo";
-            this.lblCampo.Size = new System.Drawing.Size(45, 13);
+            this.lblCampo.Size = new System.Drawing.Size(57, 17);
             this.lblCampo.TabIndex = 3;
             this.lblCampo.Text = "Campo";
             // 
@@ -127,9 +131,10 @@
             // 
             this.lblCriterio.AutoSize = true;
             this.lblCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCriterio.Location = new System.Drawing.Point(211, 472);
+            this.lblCriterio.Location = new System.Drawing.Point(281, 581);
+            this.lblCriterio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCriterio.Name = "lblCriterio";
-            this.lblCriterio.Size = new System.Drawing.Size(47, 13);
+            this.lblCriterio.Size = new System.Drawing.Size(61, 17);
             this.lblCriterio.TabIndex = 5;
             this.lblCriterio.Text = "Criterio";
             // 
@@ -137,18 +142,20 @@
             // 
             this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCriterio.FormattingEnabled = true;
-            this.cboCriterio.Location = new System.Drawing.Point(268, 468);
+            this.cboCriterio.Location = new System.Drawing.Point(357, 576);
+            this.cboCriterio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboCriterio.Name = "cboCriterio";
-            this.cboCriterio.Size = new System.Drawing.Size(121, 21);
+            this.cboCriterio.Size = new System.Drawing.Size(160, 24);
             this.cboCriterio.TabIndex = 7;
             // 
             // cboCampo
             // 
             this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCampo.FormattingEnabled = true;
-            this.cboCampo.Location = new System.Drawing.Point(58, 468);
+            this.cboCampo.Location = new System.Drawing.Point(77, 576);
+            this.cboCampo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboCampo.Name = "cboCampo";
-            this.cboCampo.Size = new System.Drawing.Size(121, 21);
+            this.cboCampo.Size = new System.Drawing.Size(160, 24);
             this.cboCampo.TabIndex = 8;
             this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
             // 
@@ -156,17 +163,19 @@
             // 
             this.lblFiltroAvanzado.AutoSize = true;
             this.lblFiltroAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltroAvanzado.Location = new System.Drawing.Point(418, 471);
+            this.lblFiltroAvanzado.Location = new System.Drawing.Point(557, 580);
+            this.lblFiltroAvanzado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFiltroAvanzado.Name = "lblFiltroAvanzado";
-            this.lblFiltroAvanzado.Size = new System.Drawing.Size(35, 13);
+            this.lblFiltroAvanzado.Size = new System.Drawing.Size(45, 17);
             this.lblFiltroAvanzado.TabIndex = 9;
             this.lblFiltroAvanzado.Text = "Filtro";
             // 
             // txtFiltroAvanzado
             // 
-            this.txtFiltroAvanzado.Location = new System.Drawing.Point(453, 468);
+            this.txtFiltroAvanzado.Location = new System.Drawing.Point(604, 576);
+            this.txtFiltroAvanzado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFiltroAvanzado.Name = "txtFiltroAvanzado";
-            this.txtFiltroAvanzado.Size = new System.Drawing.Size(100, 20);
+            this.txtFiltroAvanzado.Size = new System.Drawing.Size(132, 22);
             this.txtFiltroAvanzado.TabIndex = 10;
             // 
             // btnBuscar
@@ -178,9 +187,10 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscar.Location = new System.Drawing.Point(583, 466);
+            this.btnBuscar.Location = new System.Drawing.Point(777, 574);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
             this.btnBuscar.TabIndex = 11;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -192,9 +202,10 @@
             this.lblTitulo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTitulo.Location = new System.Drawing.Point(7, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(9, 11);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(189, 24);
+            this.lblTitulo.Size = new System.Drawing.Size(224, 30);
             this.lblTitulo.TabIndex = 12;
             this.lblTitulo.Text = "Listado de artículos";
             // 
@@ -206,9 +217,10 @@
             this.btnVerDetalleArticulo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnVerDetalleArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerDetalleArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerDetalleArticulo.Location = new System.Drawing.Point(312, 397);
+            this.btnVerDetalleArticulo.Location = new System.Drawing.Point(416, 488);
+            this.btnVerDetalleArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVerDetalleArticulo.Name = "btnVerDetalleArticulo";
-            this.btnVerDetalleArticulo.Size = new System.Drawing.Size(93, 26);
+            this.btnVerDetalleArticulo.Size = new System.Drawing.Size(124, 32);
             this.btnVerDetalleArticulo.TabIndex = 13;
             this.btnVerDetalleArticulo.Text = "Ver artículo";
             this.btnVerDetalleArticulo.UseVisualStyleBackColor = false;
@@ -216,9 +228,10 @@
             // 
             // pbxImagenListado
             // 
-            this.pbxImagenListado.Location = new System.Drawing.Point(678, 105);
+            this.pbxImagenListado.Location = new System.Drawing.Point(904, 129);
+            this.pbxImagenListado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbxImagenListado.Name = "pbxImagenListado";
-            this.pbxImagenListado.Size = new System.Drawing.Size(237, 209);
+            this.pbxImagenListado.Size = new System.Drawing.Size(316, 257);
             this.pbxImagenListado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxImagenListado.TabIndex = 14;
             this.pbxImagenListado.TabStop = false;
@@ -230,9 +243,10 @@
             this.btnAnteriorImg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnAnteriorImg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnAnteriorImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnteriorImg.Location = new System.Drawing.Point(759, 319);
+            this.btnAnteriorImg.Location = new System.Drawing.Point(1012, 393);
+            this.btnAnteriorImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAnteriorImg.Name = "btnAnteriorImg";
-            this.btnAnteriorImg.Size = new System.Drawing.Size(27, 24);
+            this.btnAnteriorImg.Size = new System.Drawing.Size(36, 30);
             this.btnAnteriorImg.TabIndex = 15;
             this.btnAnteriorImg.Text = "<";
             this.btnAnteriorImg.UseVisualStyleBackColor = false;
@@ -245,9 +259,10 @@
             this.btnSiguienteImg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnSiguienteImg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnSiguienteImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiguienteImg.Location = new System.Drawing.Point(804, 319);
+            this.btnSiguienteImg.Location = new System.Drawing.Point(1072, 393);
+            this.btnSiguienteImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSiguienteImg.Name = "btnSiguienteImg";
-            this.btnSiguienteImg.Size = new System.Drawing.Size(27, 24);
+            this.btnSiguienteImg.Size = new System.Drawing.Size(36, 30);
             this.btnSiguienteImg.TabIndex = 17;
             this.btnSiguienteImg.Text = ">";
             this.btnSiguienteImg.UseVisualStyleBackColor = false;
@@ -261,9 +276,10 @@
             this.btnMenuCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnMenuCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuCategorias.Location = new System.Drawing.Point(739, 383);
+            this.btnMenuCategorias.Location = new System.Drawing.Point(985, 471);
+            this.btnMenuCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMenuCategorias.Name = "btnMenuCategorias";
-            this.btnMenuCategorias.Size = new System.Drawing.Size(142, 54);
+            this.btnMenuCategorias.Size = new System.Drawing.Size(189, 66);
             this.btnMenuCategorias.TabIndex = 19;
             this.btnMenuCategorias.Text = "Menu Categorías";
             this.btnMenuCategorias.UseVisualStyleBackColor = false;
@@ -277,9 +293,10 @@
             this.btnMenuMarcas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnMenuMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuMarcas.Location = new System.Drawing.Point(739, 443);
+            this.btnMenuMarcas.Location = new System.Drawing.Point(985, 545);
+            this.btnMenuMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMenuMarcas.Name = "btnMenuMarcas";
-            this.btnMenuMarcas.Size = new System.Drawing.Size(142, 54);
+            this.btnMenuMarcas.Size = new System.Drawing.Size(189, 66);
             this.btnMenuMarcas.TabIndex = 20;
             this.btnMenuMarcas.Text = "Menu Marcas";
             this.btnMenuMarcas.UseVisualStyleBackColor = false;
@@ -287,10 +304,10 @@
             // 
             // frmArticulos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(927, 512);
+            this.ClientSize = new System.Drawing.Size(1233, 620);
             this.Controls.Add(this.btnMenuMarcas);
             this.Controls.Add(this.btnMenuCategorias);
             this.Controls.Add(this.btnSiguienteImg);
@@ -309,9 +326,9 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulos);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(943, 551);
-            this.MinimumSize = new System.Drawing.Size(943, 551);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(1251, 667);
+            this.MinimumSize = new System.Drawing.Size(1251, 667);
             this.Name = "frmArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulos";

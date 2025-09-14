@@ -19,6 +19,7 @@ namespace CatalogoWinform
         public frmAltaCategoria()
         {
             InitializeComponent();
+            Text = "Alta categoria";
         }
         public frmAltaCategoria(Categoria categoria)
         {

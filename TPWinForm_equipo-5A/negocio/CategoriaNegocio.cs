@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using dominio;
 
 namespace negocio
@@ -20,6 +21,7 @@ namespace negocio
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error al agregar una categoria");
                 throw ex;
             }
             finally
@@ -53,6 +55,7 @@ namespace negocio
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error al listar una categoria");
                 throw ex;
             }
             finally
@@ -74,6 +77,7 @@ namespace negocio
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error al modificar una categoria");
                 throw ex;
             }
             finally
@@ -81,5 +85,50 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+        public void eliminar(int id)
+        {
+            bool existente = false;
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            List<Articulo> listaArticulos = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            listaArticulos = articuloNegocio.listar();
+            try
+            {
+                foreach (var item in listaArticulos)
+                {
+                    if (item.Categoria.Id == id)
+                    {
+                        existente = true;
+                    }
+                }
+                if (existente == true)
+                {
+                    MessageBox.Show("Operación denegada. Articulos en existencia pertenecnientes a la categoria.");
+                }
+                else
+                {
+                    DialogResult respuesta = MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        datos.setearConsulta("delete from categorias where id = @id");
+                        datos.setearParametro("@id", id);
+                        datos.ejecutarAccion();
+                        MessageBox.Show("Categoria eliminada correctamente");
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar una categoria");
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }
