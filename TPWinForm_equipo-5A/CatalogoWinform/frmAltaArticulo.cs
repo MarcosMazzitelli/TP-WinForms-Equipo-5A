@@ -28,11 +28,10 @@ namespace CatalogoWinform
         {
             InitializeComponent();
             imagenes = new List<string>();
-            listaImagenes = new List<Imagen>(); 
+            listaImagenes = new List<Imagen>();
+            btnAgregarImagen.Visible = false;
             indiceImagenActual = 0;
-            cargarBotones();
-            pbxAgregarImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
-
+            MostrarImagenPorDefecto();
         }
         public frmAltaArticulo(Articulo articulo) //click modificar: se ejecuta el segundo constructor con un articulo
         {
@@ -47,7 +46,7 @@ namespace CatalogoWinform
             indiceImagenActual = 0;
             ImagenNegocio imagenNegocio = new ImagenNegocio();
             listaImagenes = new List<Imagen>();
-
+            btnAgregarImagen.Visible = false;
             listaImagenes = imagenNegocio.listImagenes();
             //expresion lambda para traer solo imagenes asociadas al articulo recibido por parametro
             listaImagenes = listaImagenes.FindAll(img => img.IdArticulo == articulo.Id);
@@ -182,6 +181,14 @@ namespace CatalogoWinform
             try
             {
                 pbxAgregarImagen.Load(imagen);
+                if (string.IsNullOrWhiteSpace(txtUrlImagen.Text))
+                {
+                    btnAgregarImagen.Visible = false;
+                }
+                else
+                {
+                    btnAgregarImagen.Visible = true;
+                }
 
             }
             catch (Exception)
@@ -220,7 +227,6 @@ namespace CatalogoWinform
 
                     // Cargar la imagen en la nueva posición
                     cargarImagen(listaImagenes[indiceImagenActual].Url);
-                    txtUrlImagen.Text = listaImagenes[indiceImagenActual].Url;
                 }
             }
             catch (Exception)
