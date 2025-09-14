@@ -55,19 +55,21 @@
             this.dgvArticulos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvArticulos.Location = new System.Drawing.Point(12, 67);
+            this.dgvArticulos.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvArticulos.Location = new System.Drawing.Point(12, 50);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(595, 324);
+            this.dgvArticulos.Size = new System.Drawing.Size(558, 341);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAgregar.FlatAppearance.BorderSize = 2;
+            this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Location = new System.Drawing.Point(11, 397);
@@ -82,7 +84,8 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnModificar.FlatAppearance.BorderSize = 2;
+            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.Location = new System.Drawing.Point(112, 397);
@@ -98,7 +101,7 @@
             // 
             this.btnEliminarFisicamente.BackColor = System.Drawing.SystemColors.Control;
             this.btnEliminarFisicamente.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEliminarFisicamente.FlatAppearance.BorderSize = 2;
+            this.btnEliminarFisicamente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btnEliminarFisicamente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnEliminarFisicamente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarFisicamente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,8 +173,8 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.Control;
             this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnBuscar.FlatAppearance.BorderSize = 2;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -187,11 +190,11 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe MDL2 Assets", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(3)));
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTitulo.Location = new System.Drawing.Point(104, 18);
+            this.lblTitulo.Location = new System.Drawing.Point(7, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(392, 46);
+            this.lblTitulo.Size = new System.Drawing.Size(189, 24);
             this.lblTitulo.TabIndex = 12;
             this.lblTitulo.Text = "Listado de artículos";
             // 
@@ -199,13 +202,13 @@
             // 
             this.btnVerDetalleArticulo.BackColor = System.Drawing.SystemColors.Control;
             this.btnVerDetalleArticulo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnVerDetalleArticulo.FlatAppearance.BorderSize = 2;
-            this.btnVerDetalleArticulo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnVerDetalleArticulo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnVerDetalleArticulo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnVerDetalleArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerDetalleArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerDetalleArticulo.Location = new System.Drawing.Point(441, 397);
+            this.btnVerDetalleArticulo.Location = new System.Drawing.Point(312, 397);
             this.btnVerDetalleArticulo.Name = "btnVerDetalleArticulo";
-            this.btnVerDetalleArticulo.Size = new System.Drawing.Size(112, 40);
+            this.btnVerDetalleArticulo.Size = new System.Drawing.Size(93, 26);
             this.btnVerDetalleArticulo.TabIndex = 13;
             this.btnVerDetalleArticulo.Text = "Ver artículo";
             this.btnVerDetalleArticulo.UseVisualStyleBackColor = false;
@@ -224,6 +227,8 @@
             // 
             this.btnAnteriorImg.BackColor = System.Drawing.SystemColors.Control;
             this.btnAnteriorImg.FlatAppearance.BorderSize = 2;
+            this.btnAnteriorImg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnAnteriorImg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnAnteriorImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnteriorImg.Location = new System.Drawing.Point(759, 319);
             this.btnAnteriorImg.Name = "btnAnteriorImg";
@@ -237,6 +242,8 @@
             // 
             this.btnSiguienteImg.BackColor = System.Drawing.SystemColors.Control;
             this.btnSiguienteImg.FlatAppearance.BorderSize = 2;
+            this.btnSiguienteImg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnSiguienteImg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
             this.btnSiguienteImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguienteImg.Location = new System.Drawing.Point(804, 319);
             this.btnSiguienteImg.Name = "btnSiguienteImg";
@@ -303,7 +310,10 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvArticulos);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximumSize = new System.Drawing.Size(943, 551);
+            this.MinimumSize = new System.Drawing.Size(943, 551);
             this.Name = "frmArticulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();

@@ -39,18 +39,16 @@
             // 
             // txtDescripcionMarca
             // 
-            this.txtDescripcionMarca.Location = new System.Drawing.Point(391, 150);
-            this.txtDescripcionMarca.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcionMarca.Location = new System.Drawing.Point(293, 122);
             this.txtDescripcionMarca.Name = "txtDescripcionMarca";
-            this.txtDescripcionMarca.Size = new System.Drawing.Size(132, 22);
+            this.txtDescripcionMarca.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcionMarca.TabIndex = 10;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(434, 273);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(326, 222);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -58,10 +56,9 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(266, 273);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Location = new System.Drawing.Point(200, 222);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -70,10 +67,9 @@
             // lblDescripcionCategoria
             // 
             this.lblDescripcionCategoria.AutoSize = true;
-            this.lblDescripcionCategoria.Location = new System.Drawing.Point(262, 154);
-            this.lblDescripcionCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescripcionCategoria.Location = new System.Drawing.Point(196, 125);
             this.lblDescripcionCategoria.Name = "lblDescripcionCategoria";
-            this.lblDescripcionCategoria.Size = new System.Drawing.Size(79, 16);
+            this.lblDescripcionCategoria.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcionCategoria.TabIndex = 7;
             this.lblDescripcionCategoria.Text = "Descripcion";
             // 
@@ -84,8 +80,9 @@
             this.panelCabeceraCategoria.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabeceraCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.panelCabeceraCategoria.Location = new System.Drawing.Point(0, 0);
+            this.panelCabeceraCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelCabeceraCategoria.Name = "panelCabeceraCategoria";
-            this.panelCabeceraCategoria.Size = new System.Drawing.Size(800, 65);
+            this.panelCabeceraCategoria.Size = new System.Drawing.Size(600, 53);
             this.panelCabeceraCategoria.TabIndex = 11;
             // 
             // txtCabeceraMarca
@@ -94,23 +91,27 @@
             this.txtCabeceraMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtCabeceraMarca.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCabeceraMarca.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtCabeceraMarca.Location = new System.Drawing.Point(34, 26);
+            this.txtCabeceraMarca.Location = new System.Drawing.Point(26, 21);
+            this.txtCabeceraMarca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtCabeceraMarca.Name = "txtCabeceraMarca";
-            this.txtCabeceraMarca.Size = new System.Drawing.Size(172, 23);
+            this.txtCabeceraMarca.Size = new System.Drawing.Size(142, 19);
             this.txtCabeceraMarca.TabIndex = 7;
             this.txtCabeceraMarca.Text = "ALTA NUEVA MARCA";
             this.txtCabeceraMarca.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmAltaMarca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.panelCabeceraCategoria);
             this.Controls.Add(this.txtDescripcionMarca);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblDescripcionCategoria);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(616, 405);
+            this.MinimumSize = new System.Drawing.Size(616, 405);
             this.Name = "frmAltaMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAltaMarca";

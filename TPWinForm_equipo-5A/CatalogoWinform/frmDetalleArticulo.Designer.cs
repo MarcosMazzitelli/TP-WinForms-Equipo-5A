@@ -28,168 +28,272 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.btnSiguienteImg = new System.Windows.Forms.Button();
+            this.btnAnteriorImg = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblCodigo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo de Artículo:";
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(7, 67);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(139, 19);
+            this.lblCodigo.TabIndex = 0;
+            this.lblCodigo.Text = "Codigo de Artículo:";
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Enabled = false;
-            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox1.Location = new System.Drawing.Point(162, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(291, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtCodigo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtCodigo.ForeColor = System.Drawing.Color.Black;
+            this.txtCodigo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtCodigo.Location = new System.Drawing.Point(159, 69);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtCodigo.Size = new System.Drawing.Size(291, 22);
+            this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TabStop = false;
             // 
-            // btnSalir
+            // btnVolver
             // 
-            this.btnSalir.Location = new System.Drawing.Point(187, 260);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnVolver.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Location = new System.Drawing.Point(359, 336);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(91, 33);
+            this.btnVolver.TabIndex = 2;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // textBox2
+            // txtMarca
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Enabled = false;
-            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox2.Location = new System.Drawing.Point(162, 128);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(291, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtMarca.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMarca.Enabled = false;
+            this.txtMarca.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtMarca.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtMarca.Location = new System.Drawing.Point(159, 175);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.ReadOnly = true;
+            this.txtMarca.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtMarca.Size = new System.Drawing.Size(291, 22);
+            this.txtMarca.TabIndex = 4;
+            this.txtMarca.TabStop = false;
             // 
-            // textBox3
+            // txtDescripcion
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Enabled = false;
-            this.textBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox3.Location = new System.Drawing.Point(162, 93);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox3.Size = new System.Drawing.Size(291, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtDescripcion.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescripcion.Enabled = false;
+            this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtDescripcion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtDescripcion.Location = new System.Drawing.Point(159, 140);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.ReadOnly = true;
+            this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtDescripcion.Size = new System.Drawing.Size(291, 22);
+            this.txtDescripcion.TabIndex = 6;
+            this.txtDescripcion.TabStop = false;
             // 
-            // textBox4
+            // txtNombre
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Enabled = false;
-            this.textBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox4.Location = new System.Drawing.Point(162, 57);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(291, 20);
-            this.textBox4.TabIndex = 8;
+            this.txtNombre.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Enabled = false;
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtNombre.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtNombre.Location = new System.Drawing.Point(159, 104);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtNombre.Size = new System.Drawing.Size(291, 22);
+            this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabStop = false;
             // 
-            // label5
+            // lblNombre
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(80, 57);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 19);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Nombre:";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(77, 104);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(69, 19);
+            this.lblNombre.TabIndex = 9;
+            this.lblNombre.Text = "Nombre:";
             // 
-            // label2
+            // lblDescripcion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(57, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 19);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Descripción:";
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Location = new System.Drawing.Point(54, 138);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(92, 19);
+            this.lblDescripcion.TabIndex = 10;
+            this.lblDescripcion.Text = "Descripción:";
             // 
-            // label3
+            // lblMarca
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(93, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 19);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Marca:";
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.Location = new System.Drawing.Point(90, 176);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(56, 19);
+            this.lblMarca.TabIndex = 11;
+            this.lblMarca.Text = "Marca:";
             // 
-            // label4
+            // lblCategoria
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(71, 163);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 19);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Categoría:";
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(68, 210);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(78, 19);
+            this.lblCategoria.TabIndex = 12;
+            this.lblCategoria.Text = "Categoría:";
             // 
-            // label6
+            // lblPrecio
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(93, 201);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 19);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Precio:";
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Location = new System.Drawing.Point(90, 248);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(56, 19);
+            this.lblPrecio.TabIndex = 13;
+            this.lblPrecio.Text = "Precio:";
             // 
-            // pictureBox1
+            // pbxImagen
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(494, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 254);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.pbxImagen.Location = new System.Drawing.Point(491, 76);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(245, 254);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxImagen.TabIndex = 14;
+            this.pbxImagen.TabStop = false;
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtCategoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCategoria.Enabled = false;
+            this.txtCategoria.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtCategoria.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtCategoria.Location = new System.Drawing.Point(159, 212);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.ReadOnly = true;
+            this.txtCategoria.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtCategoria.Size = new System.Drawing.Size(291, 22);
+            this.txtCategoria.TabIndex = 15;
+            this.txtCategoria.TabStop = false;
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrecio.Enabled = false;
+            this.txtPrecio.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtPrecio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtPrecio.Location = new System.Drawing.Point(159, 250);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.ReadOnly = true;
+            this.txtPrecio.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtPrecio.Size = new System.Drawing.Size(291, 22);
+            this.txtPrecio.TabIndex = 16;
+            this.txtPrecio.TabStop = false;
+            // 
+            // btnSiguienteImg
+            // 
+            this.btnSiguienteImg.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSiguienteImg.FlatAppearance.BorderSize = 2;
+            this.btnSiguienteImg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnSiguienteImg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnSiguienteImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguienteImg.Location = new System.Drawing.Point(631, 336);
+            this.btnSiguienteImg.Name = "btnSiguienteImg";
+            this.btnSiguienteImg.Size = new System.Drawing.Size(27, 24);
+            this.btnSiguienteImg.TabIndex = 17;
+            this.btnSiguienteImg.Text = ">";
+            this.btnSiguienteImg.UseVisualStyleBackColor = false;
+            this.btnSiguienteImg.Click += new System.EventHandler(this.btnSiguienteImg_Click);
+            // 
+            // btnAnteriorImg
+            // 
+            this.btnAnteriorImg.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAnteriorImg.FlatAppearance.BorderSize = 2;
+            this.btnAnteriorImg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnAnteriorImg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnAnteriorImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnteriorImg.Location = new System.Drawing.Point(553, 336);
+            this.btnAnteriorImg.Name = "btnAnteriorImg";
+            this.btnAnteriorImg.Size = new System.Drawing.Size(27, 24);
+            this.btnAnteriorImg.TabIndex = 18;
+            this.btnAnteriorImg.Text = "<";
+            this.btnAnteriorImg.UseVisualStyleBackColor = false;
+            this.btnAnteriorImg.Click += new System.EventHandler(this.btnAnteriorImg_Click);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblTitulo.Location = new System.Drawing.Point(284, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(177, 24);
+            this.lblTitulo.TabIndex = 19;
+            this.lblTitulo.Text = "Detalle de artículo";
             // 
             // frmDetalleArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(800, 372);
+            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.btnAnteriorImg);
+            this.Controls.Add(this.btnSiguienteImg);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtCategoria);
+            this.Controls.Add(this.pbxImagen);
+            this.Controls.Add(this.lblPrecio);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.lblMarca);
+            this.Controls.Add(this.lblDescripcion);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtMarca);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.lblCodigo);
+            this.MaximumSize = new System.Drawing.Size(816, 411);
+            this.MinimumSize = new System.Drawing.Size(816, 411);
             this.Name = "frmDetalleArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDetalleArticulo";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.frmDetalleArticulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,17 +301,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.PictureBox pbxImagen;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.Button btnSiguienteImg;
+        private System.Windows.Forms.Button btnAnteriorImg;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }

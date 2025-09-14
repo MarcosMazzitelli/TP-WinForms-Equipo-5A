@@ -31,39 +31,12 @@ namespace CatalogoWinform
         {
             pbxImagenListado.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwCJYSnbBLMEGWKfSnWRGC_34iCCKkxePpg&s");
         }
-        private void cargarBotones()
-        {
-
-            // Si no hay imágenes, esconder todos los botones relacionados
-            if (listaImagenes.Count == 0)
-            {
-                btnAnteriorImg.Visible = false;
-                btnSiguienteImg.Visible = false;
-                //sino hay imagenes no se ejecuta nada de lo de abajo por el return.
-                return;
-            }
-
-
-            // Boton anterior visible solo si hay una imagen antes
-            if (indiceImagenActual > 0)
-                btnAnteriorImg.Visible = true;
-            else
-                btnAnteriorImg.Visible = false;
-
-            // Boton siguiente visible solo si hay una imagen después
-            if (indiceImagenActual < listaImagenes.Count - 1)
-                btnSiguienteImg.Visible = true;
-            else
-                btnSiguienteImg.Visible = false;
-        }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            //El dataSurce,este ve la estructura de la clase y mapea automáticamente las propiedades en columnas
-            dgvArticulos.DataSource = negocio.listar();
-            //hacer metodo cargar con lo de arriba
+            cargar();
             cboCampo.Items.Add("Codigo");
             cboCampo.Items.Add("Nombre");
             cboCampo.Items.Add("Categoria");
@@ -74,7 +47,9 @@ namespace CatalogoWinform
         {
             //abre la ventana de alta articulos y toma el control
             frmAltaArticulo alta = new frmAltaArticulo();
+            this.Hide();
             alta.ShowDialog();
+            this.Show();
             cargar();
         }
 
@@ -84,7 +59,9 @@ namespace CatalogoWinform
             Articulo seleccionado; // Creamos objeto Articulo donde guardaremos seleccion
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem; // devolvemos un objeto Articulo casteadolo, desde la fila del dataGridView donde nos posicionamos
             frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
+            this.Hide();
             modificar.ShowDialog();
+            this.Show();
             cargar();
         }
         private void cargar() //actualizar tablas
@@ -94,7 +71,9 @@ namespace CatalogoWinform
             {
                 listaArticulos = articuloNegocio.listar(); 
                 dgvArticulos.DataSource = listaArticulos;
-      
+                ocultarColumnas();
+
+
             }
             catch (Exception ex)
             {
@@ -158,6 +137,7 @@ namespace CatalogoWinform
                 string filtro = txtFiltroAvanzado.Text;
                 //filtrar retorna una lista que se asigna al dataGridView.
                 dgvArticulos.DataSource = articuloNegocio.filtrar(campo, criterio, filtro);
+                ocultarColumnas();
 
             }
             catch (Exception ex)
@@ -215,6 +195,32 @@ namespace CatalogoWinform
 
         }
 
+        private void cargarBotones()
+        {
+
+            // Si no hay imágenes, esconder todos los botones relacionados
+            if (listaImagenes.Count == 0)
+            {
+                btnAnteriorImg.Visible = false;
+                btnSiguienteImg.Visible = false;
+                //sino hay imagenes no se ejecuta nada de lo de abajo por el return.
+                return;
+            }
+
+
+            // Boton anterior visible solo si hay una imagen antes
+            if (indiceImagenActual > 0)
+                btnAnteriorImg.Visible = true;
+            else
+                btnAnteriorImg.Visible = false;
+
+            // Boton siguiente visible solo si hay una imagen después
+            if (indiceImagenActual < listaImagenes.Count - 1)
+                btnSiguienteImg.Visible = true;
+            else
+                btnSiguienteImg.Visible = false;
+        }
+
         private void btnAnterior_Click(object sender, EventArgs e)
         {
             if (listaImagenes == null || listaImagenes.Count == 0) 
@@ -244,21 +250,43 @@ namespace CatalogoWinform
         private void btnMenuCategorias_Click(object sender, EventArgs e)
         {
             frmCategorias ventanaCategorias = new frmCategorias();
+            this.Hide();
             ventanaCategorias.ShowDialog();
+            this.Show();
 
         }
 
         private void btnMenuMarcas_Click(object sender, EventArgs e)
         {
             frmMarca ventanaMarca = new frmMarca();
+            this.Hide();
             ventanaMarca.ShowDialog();
+            this.Show();
 
         }
 
         private void btnVerDetalleArticulo_Click(object sender, EventArgs e)
         {
-            frmDetalleArticulo ventanaDetalleArticulo = new frmDetalleArticulo();
+            if (dgvArticulos.CurrentRow == null)
+                return;
+
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+            Articulo articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            listaImagenes = imagenNegocio.listImagenes();
+            //expresion lambda para traer solo imagenes asociadas al articulo recibido por parametro
+            listaImagenes = listaImagenes.FindAll(img => img.IdArticulo == articuloSeleccionado.Id);
+            frmDetalleArticulo ventanaDetalleArticulo = new frmDetalleArticulo(articuloSeleccionado, listaImagenes);
+            this.Hide();
             ventanaDetalleArticulo.ShowDialog();
+            this.Show();
+        }
+
+        private void ocultarColumnas()
+        {
+            dgvArticulos.Columns["Id"].Visible = false;
+            dgvArticulos.Columns["Descripcion"].Visible = false;
+
         }
     }
 }

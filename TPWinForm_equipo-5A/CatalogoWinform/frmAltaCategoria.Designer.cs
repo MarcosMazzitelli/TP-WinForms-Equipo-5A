@@ -94,7 +94,7 @@
             this.panelCabeceraCategoria.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabeceraCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.panelCabeceraCategoria.Location = new System.Drawing.Point(0, 0);
-            this.panelCabeceraCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelCabeceraCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.panelCabeceraCategoria.Name = "panelCabeceraCategoria";
             this.panelCabeceraCategoria.Size = new System.Drawing.Size(511, 53);
             this.panelCabeceraCategoria.TabIndex = 12;
@@ -109,6 +109,8 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblDescripcionCategoria);
+            this.MaximumSize = new System.Drawing.Size(527, 312);
+            this.MinimumSize = new System.Drawing.Size(527, 312);
             this.Name = "frmAltaCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta Categoria";
