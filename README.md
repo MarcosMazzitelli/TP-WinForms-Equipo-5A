@@ -38,9 +38,9 @@ El objetivo es desarrollar una aplicación de escritorio con **ABM completo con 
 
 ![Eliminacion Articulo](./TPWinForm_equipo-5A/Imgs/Img_EliminarArticulo.png)
 
-![ABM Categorías](./TPWinForm_equipo-5A/Imgs/MenuCategorias.png)
+![ABM Categorias](./TPWinForm_equipo-5A/Imgs/MenuCategorias.png)
 
-![ABM Marcas(./TPWinForm_equipo-5A/Imgs/MenuMarcas.png)
+![ABM Marcas](./TPWinForm_equipo-5A/Imgs/MenuMarcas.png)
 
 ---
 
